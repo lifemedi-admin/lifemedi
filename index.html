@@ -19,8 +19,30 @@
 <meta name="twitter:description" content="부모의 오늘은 더 건강하게, 자녀의 내일은 더 안심하게 — 부모와 자녀를 잇는 시니어 헬스케어." />
 <meta name="twitter:image" content="https://lifemedi.kr/assets/og-image.jpg" />
 <meta name="theme-color" content="#0B192C" />
+<link rel="canonical" href="https://lifemedi.kr/" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "라이프메디",
+  "alternateName": "LIFEMEDI",
+  "url": "https://lifemedi.kr/",
+  "logo": "https://lifemedi.kr/assets/og-image.jpg",
+  "image": "https://lifemedi.kr/assets/og-image.jpg",
+  "description": "부모와 자녀를 잇는 시니어 헬스케어. 부모의 영양과 일상 루틴을 설계해 더 오래 건강하게, 가족이 안심하도록 돕습니다.",
+  "email": "biz@lifemedi.kr",
+  "taxID": "576-88-03778",
+  "founder": { "@type": "Person", "name": "김우성" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "강북구 한천로139길 42, 3층 301호 (수유동, 영남빌딩)",
+    "addressLocality": "서울특별시",
+    "addressCountry": "KR"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -177,7 +199,7 @@
     letter-spacing: -.025em; color: var(--white);
   }
   .hero h1 .accent { 
-    background: linear-gradient(135deg, #a7b59a 0%, #8ca4e6 50%, #d4af37 100%); 
+    background: linear-gradient(120deg, #a7b59a 0%, #8ca4e6 100%);
     -webkit-background-clip: text; color: transparent; 
   }
   .hero-sub { color: rgba(255, 255, 255, 0.7); font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin: 0 0 40px 0; text-align: left; }
@@ -449,7 +471,7 @@
     animation: nutritionRing 1.8s ease-out forwards 0.3s;
   }
   .stat-card.sleep .stat-progress-val {
-    stroke: #d4af37;
+    stroke: #8ca4e6;
     animation: sleepRing 1.8s ease-out forwards 0.5s;
   }
   @keyframes nutritionRing { to { stroke-dashoffset: 20; } } /* 80% */
@@ -499,7 +521,7 @@
   }
   
   .floating-tag svg { width: 15px; height: 15px; flex-shrink: 0; }
-  .floating-tag.tag1 svg { color: #d4af37; }
+  .floating-tag.tag1 svg { color: #8ca4e6; }
   .floating-tag.tag2 svg { color: #a7b59a; }
   
   .floating-tag span {
@@ -926,7 +948,7 @@
   footer h5 { color: #fff; font-size: 17px; margin-bottom: 24px; font-weight: 700; }
   footer ul { list-style: none; display: grid; gap: 14px; }
   footer ul a { color: #9fb0c6; transition: color .2s; }
-  footer ul a:hover { color: var(--gold); }
+  footer ul a:hover { color: var(--sage); }
   .foot-legal { border-top: 1px solid rgba(255,255,255,.08); padding-top: 26px; margin-bottom: 18px; color: #76869c; font-size: 13.5px; line-height: 1.9; }
   .foot-legal p { margin: 0; }
   .foot-legal b { color: #9fb0c6; font-weight: 700; }
@@ -1102,7 +1124,7 @@
   .intro-orb { position: absolute; border-radius: 50%; filter: blur(60px); }
   .intro-orb.io1 { width: 360px; height: 360px; left: 15%; top: 20%; background: radial-gradient(circle, rgba(167,181,154,.32) 0%, transparent 70%); animation: introFloat 9s ease-in-out infinite; }
   .intro-orb.io2 { width: 430px; height: 430px; right: 11%; bottom: 14%; background: radial-gradient(circle, rgba(80,106,181,.28) 0%, transparent 70%); animation: introFloat 12s ease-in-out infinite reverse; }
-  .intro-orb.io3 { width: 280px; height: 280px; left: 60%; top: 58%; background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 70%); animation: introFloat 15s ease-in-out infinite; }
+  .intro-orb.io3 { width: 280px; height: 280px; left: 60%; top: 58%; background: radial-gradient(circle, rgba(247,231,206,.12) 0%, transparent 70%); animation: introFloat 15s ease-in-out infinite; }
   @keyframes introFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(26px,-24px) scale(1.12); } }
 </style>
 </head>
