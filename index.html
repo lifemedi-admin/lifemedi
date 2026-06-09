@@ -1005,7 +1005,8 @@
   .intro-overlay {
     position: fixed;
     inset: 0;
-    background: #040911;
+    background: radial-gradient(circle at 50% 42%, #0c1c30 0%, #050b15 62%, #03070d 100%);
+    overflow: hidden;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -1017,6 +1018,8 @@
     pointer-events: none;
   }
   .intro-content {
+    position: relative;
+    z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1068,12 +1071,27 @@
     0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(167, 181, 154, 0.3)); }
     50% { transform: scale(1.035); filter: drop-shadow(0 0 20px rgba(167, 181, 154, 0.55)); }
   }
+  /* 스플래시 배경 모션 (떠다니는 오브 + 퍼지는 레이더 링) */
+  .intro-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+  .intro-orb { position: absolute; border-radius: 50%; filter: blur(60px); }
+  .intro-orb.io1 { width: 360px; height: 360px; left: 15%; top: 20%; background: radial-gradient(circle, rgba(167,181,154,.32) 0%, transparent 70%); animation: introFloat 9s ease-in-out infinite; }
+  .intro-orb.io2 { width: 430px; height: 430px; right: 11%; bottom: 14%; background: radial-gradient(circle, rgba(80,106,181,.28) 0%, transparent 70%); animation: introFloat 12s ease-in-out infinite reverse; }
+  .intro-orb.io3 { width: 280px; height: 280px; left: 60%; top: 58%; background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 70%); animation: introFloat 15s ease-in-out infinite; }
+  .intro-ring { position: absolute; left: 50%; top: 42%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%; border: 1.5px solid rgba(167,181,154,.22); opacity: 0; animation: introPing 2.8s ease-out infinite; }
+  .intro-ring.ir2 { border-color: rgba(80,106,181,.20); animation-delay: .95s; }
+  .intro-ring.ir3 { border-color: rgba(255,255,255,.10); animation-delay: 1.9s; }
+  @keyframes introFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(26px,-24px) scale(1.12); } }
+  @keyframes introPing { 0% { transform: scale(.35); opacity: 0; } 14% { opacity: .6; } 70% { opacity: 0; } 100% { transform: scale(3); opacity: 0; } }
 </style>
 </head>
 <body>
 
 <!-- Fullscreen Splash Intro Loader -->
 <div class="intro-overlay" id="introOverlay">
+  <div class="intro-bg" aria-hidden="true">
+    <span class="intro-orb io1"></span><span class="intro-orb io2"></span><span class="intro-orb io3"></span>
+    <span class="intro-ring ir1"></span><span class="intro-ring ir2"></span><span class="intro-ring ir3"></span>
+  </div>
   <div class="intro-content">
     <div class="intro-logo">
       <img class="intro-svg" src="assets/symbol-white.png" alt="라이프메디 심볼" />
@@ -1618,7 +1636,7 @@
       setTimeout(() => {
         if (hero) hero.classList.add('start-anim');
       }, 450);
-    }, 1500);
+    }, 2700);
   });
 
   // Scroll reveal
