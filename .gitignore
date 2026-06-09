@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code 로컬 설정
+.claude/
+
+# 이미지 원본 백업 (웹에 불필요)
+assets/photos/_original/
