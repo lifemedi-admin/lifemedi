@@ -889,6 +889,10 @@
   .member .avatar { width: 96px; height: 96px; border-radius: 24px; background: #faf7f0; display: grid; place-items: center; color: var(--navy); font-weight: 800; font-family: "Montserrat", sans-serif; border: 1px solid rgba(11, 25, 44, 0.08); margin-bottom: 24px; overflow: hidden; font-size: 19px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
   .member .avatar.photo { padding: 0; }
   .member .avatar.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .member .avatar.photo img[src*="-sketch"] {
+    filter: brightness(0.82) contrast(1.35) saturate(0.9);
+    mix-blend-mode: multiply;
+  }
   .member .avatar.sketch-ph svg { width: 50%; height: 50%; color: #aab0bb; }
   .member .role { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 14px; letter-spacing: .1em; color: var(--sage-deep); }
   .member h4 { color: var(--navy); font-size: 22px; margin: 8px 0 16px; font-weight: 700; }
@@ -1532,16 +1536,19 @@
       </div>
       <div class="member reveal">
         <div class="avatar photo">
-          <img src="assets/team/cso-sketch.png" alt="CSO 김지우" loading="lazy"
+          <img src="assets/team/cso-sketch.png" alt="이사 김지우" loading="lazy"
                onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CS'))">
         </div>
-        <div class="role">CSO</div>
+        <div class="role">이사</div>
         <h4>김지우</h4>
         <p>13년 차 마케터. 라이프메디의 브랜드와 고객 경험을 설계하고, 자녀 세대에게 따뜻하게 다가갑니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
-        <div class="role">CPO</div>
+        <div class="avatar photo">
+          <img src="assets/team/cpo-sketch.png" alt="PM 신양기" loading="lazy"
+               onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CP'))">
+        </div>
+        <div class="role">PM</div>
         <h4>신양기</h4>
         <p>13년 차 프로덕트 전문가. 부모님의 건강과 가족을 잇는 보호자 앱과 서비스 경험을 만듭니다.</p>
       </div>
