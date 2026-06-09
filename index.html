@@ -886,9 +886,10 @@
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
   .member { background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid rgba(11, 25, 44, 0.05); transition: transform .3s, box-shadow .3s; box-shadow: var(--shadow-soft); }
   .member:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(94, 114, 87, 0.25); }
-  .member .avatar { width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, #FDFBF7, #E6EEF5); display: grid; place-items: center; color: var(--navy); font-weight: 800; font-family: "Montserrat", sans-serif; border: 1px solid rgba(11, 25, 44, 0.08); margin-bottom: 24px; overflow: hidden; font-size: 17px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-  .member .avatar.photo { width: 96px; height: 96px; border-radius: 24px; padding: 0; }
+  .member .avatar { width: 96px; height: 96px; border-radius: 24px; background: #faf7f0; display: grid; place-items: center; color: var(--navy); font-weight: 800; font-family: "Montserrat", sans-serif; border: 1px solid rgba(11, 25, 44, 0.08); margin-bottom: 24px; overflow: hidden; font-size: 19px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+  .member .avatar.photo { padding: 0; }
   .member .avatar.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .member .avatar.sketch-ph svg { width: 50%; height: 50%; color: #aab0bb; }
   .member .role { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 14px; letter-spacing: .1em; color: var(--sage-deep); }
   .member h4 { color: var(--navy); font-size: 22px; margin: 8px 0 16px; font-weight: 700; }
   .member h4 .tbd { font-size: 15px; color: var(--muted); font-weight: 600; }
@@ -1522,7 +1523,7 @@
     <div class="team-grid">
       <div class="member reveal">
         <div class="avatar photo">
-          <img src="assets/team/ceo.png" alt="대표이사 김우성" loading="lazy"
+          <img src="assets/team/ceo-sketch.png" alt="대표이사 김우성" loading="lazy"
                onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CE'))">
         </div>
         <div class="role">CEO</div>
@@ -1530,31 +1531,34 @@
         <p>요양병원 원장. 현장에서 쌓은 임상 경험으로 노인성 질환을 살피고, 부모님께 맞는 영양식 레시피를 직접 감수합니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar">CS</div>
+        <div class="avatar photo">
+          <img src="assets/team/cso-sketch.png" alt="CSO 김지우" loading="lazy"
+               onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CS'))">
+        </div>
         <div class="role">CSO</div>
         <h4>김지우</h4>
         <p>13년 차 마케터. 라이프메디의 브랜드와 고객 경험을 설계하고, 자녀 세대에게 따뜻하게 다가갑니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar">CP</div>
+        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
         <div class="role">CPO</div>
         <h4>신양기</h4>
         <p>13년 차 프로덕트 전문가. 부모님의 건강과 가족을 잇는 보호자 앱과 서비스 경험을 만듭니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar">CT</div>
+        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
         <div class="role">CTO</div>
         <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
         <p>부모님의 건강 데이터를 안전하게 잇는 기술 인프라와 보안을 함께 만들어갈 분을 찾고 있습니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar">BM</div>
+        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
         <div class="role">BM</div>
         <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
         <p>메디컬 레시피를 실제 제품으로 완성하고, 좋은 품질을 합리적인 가격에 담아낼 분을 찾고 있습니다.</p>
       </div>
       <div class="member reveal">
-        <div class="avatar">BD</div>
+        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
         <div class="role">BD</div>
         <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
         <p>보험·헬스케어 파트너와 손잡고, 가족의 부담을 더는 연결을 넓혀갈 분을 찾고 있습니다.</p>
