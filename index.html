@@ -1033,13 +1033,23 @@
     animation: introFadeOut 0.4s ease forwards;
   }
   .intro-logo {
+    position: relative;
     width: 84px;
     height: 84px;
-    color: #a7b59a;
-    filter: drop-shadow(0 0 15px rgba(167, 181, 154, 0.4));
-    animation: introPulse 2s infinite ease-in-out;
+    animation: introLogoIn 1s cubic-bezier(0.2, 0.9, 0.3, 1.5) 0.15s both;
+  }
+  /* 심볼 뒤 원형 글로우 (사각 글로우 대체) */
+  .intro-glow {
+    position: absolute; left: 50%; top: 50%;
+    width: 250px; height: 250px; margin: -125px 0 0 -125px;
+    border-radius: 50%; z-index: 0; pointer-events: none;
+    background: radial-gradient(circle, rgba(167,181,154,0.45) 0%, rgba(80,106,181,0.22) 36%, transparent 68%);
+    filter: blur(6px);
+    animation: introGlow 2.6s ease-in-out infinite;
   }
   .intro-svg {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }
@@ -1047,10 +1057,13 @@
     font-family: "Montserrat", sans-serif;
     font-size: clamp(40px, 6.4vw, 66px);
     font-weight: 700;
-    color: var(--white);
     letter-spacing: 0.28em;
-    /* optical centering: compensate the trailing letter-spacing */
-    text-indent: 0.28em;
+    text-indent: 0.28em; /* optical centering for trailing letter-spacing */
+    color: transparent;
+    background: linear-gradient(110deg, #ffffff 36%, #a7b59a 46%, #dbe6ff 50%, #a7b59a 54%, #ffffff 64%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    animation: introShine 2.8s linear infinite 0.6s;
   }
   .intro-tagline {
     margin-top: 18px;
@@ -1067,21 +1080,25 @@
   @keyframes introFadeOut {
     to { opacity: 0; }
   }
-  @keyframes introPulse {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(167, 181, 154, 0.3)); }
-    50% { transform: scale(1.035); filter: drop-shadow(0 0 20px rgba(167, 181, 154, 0.55)); }
+  @keyframes introLogoIn {
+    from { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+    to   { opacity: 1; transform: scale(1) rotate(0); }
   }
-  /* 스플래시 배경 모션 (떠다니는 오브 + 퍼지는 레이더 링) */
+  @keyframes introGlow {
+    0%, 100% { transform: scale(0.82); opacity: 0.45; }
+    50%      { transform: scale(1.18); opacity: 0.9; }
+  }
+  @keyframes introShine {
+    from { background-position: 200% center; }
+    to   { background-position: -60% center; }
+  }
+  /* 스플래시 배경 모션 (떠다니는 오브) */
   .intro-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
   .intro-orb { position: absolute; border-radius: 50%; filter: blur(60px); }
   .intro-orb.io1 { width: 360px; height: 360px; left: 15%; top: 20%; background: radial-gradient(circle, rgba(167,181,154,.32) 0%, transparent 70%); animation: introFloat 9s ease-in-out infinite; }
   .intro-orb.io2 { width: 430px; height: 430px; right: 11%; bottom: 14%; background: radial-gradient(circle, rgba(80,106,181,.28) 0%, transparent 70%); animation: introFloat 12s ease-in-out infinite reverse; }
   .intro-orb.io3 { width: 280px; height: 280px; left: 60%; top: 58%; background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 70%); animation: introFloat 15s ease-in-out infinite; }
-  .intro-ring { position: absolute; left: 50%; top: 42%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%; border: 1.5px solid rgba(167,181,154,.22); opacity: 0; animation: introPing 2.8s ease-out infinite; }
-  .intro-ring.ir2 { border-color: rgba(80,106,181,.20); animation-delay: .95s; }
-  .intro-ring.ir3 { border-color: rgba(255,255,255,.10); animation-delay: 1.9s; }
   @keyframes introFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(26px,-24px) scale(1.12); } }
-  @keyframes introPing { 0% { transform: scale(.35); opacity: 0; } 14% { opacity: .6; } 70% { opacity: 0; } 100% { transform: scale(3); opacity: 0; } }
 </style>
 </head>
 <body>
@@ -1090,10 +1107,10 @@
 <div class="intro-overlay" id="introOverlay">
   <div class="intro-bg" aria-hidden="true">
     <span class="intro-orb io1"></span><span class="intro-orb io2"></span><span class="intro-orb io3"></span>
-    <span class="intro-ring ir1"></span><span class="intro-ring ir2"></span><span class="intro-ring ir3"></span>
   </div>
   <div class="intro-content">
     <div class="intro-logo">
+      <span class="intro-glow" aria-hidden="true"></span>
       <img class="intro-svg" src="assets/symbol-white.png" alt="라이프메디 심볼" />
     </div>
     <div class="intro-text-wrap">
