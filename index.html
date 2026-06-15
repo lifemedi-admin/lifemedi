@@ -21,6 +21,7 @@
 <meta name="theme-color" content="#0B192C" />
 <link rel="canonical" href="https://lifemedi.kr/" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="assets/LogoLifemedi_Symbol.svg" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <script type="application/ld+json">
 {
@@ -51,19 +52,19 @@
   :root {
     --navy: #0B192C;
     --ivory: #FDFBF7;
-    --blue: #3A5B9C;
+    --blue: #1677ff;
     --gold: #D4AF37;
     --gold-ink: #9A7B1F; /* 밝은 배경에서 읽히는 진한 골드 */
     --champagne: #F7E7CE;
     --gray: #D0DCE1;
-    --sage: #A7B59A;       /* 어두운 배경 액센트/보더용 */
-    --sage-deep: #5E7257;  /* 밝은 배경에서 읽히는 세이지 (eyebrow·아이콘·강조) */
+    --sage: #8ccbff;       /* 어두운 배경 액센트/보더용 */
+    --sage-deep: #0e5ad6;  /* 밝은 배경에서 읽히는 세이지 (eyebrow·아이콘·강조) */
     --ink: #0f172a; /* 더 진하고 명확한 텍스트 컬러 */
     --muted: #475569; /* 가독성을 높인 본문 보조 컬러 */
     --white: #ffffff;
     --radius: 20px;
     --maxw: 1180px;
-    --gradient-brand: linear-gradient(135deg, #0B192C, #3A5B9C);
+    --gradient-brand: linear-gradient(135deg, #0B192C, #1677ff);
     --gradient-gold: linear-gradient(135deg, #D4AF37, #F3E5AB, #D4AF37);
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: 1px solid rgba(255, 255, 255, 0.5);
@@ -138,9 +139,9 @@
     display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-brand); color: var(--white);
     padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: 16px;
     transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .3s, background .3s; border: none; cursor: pointer;
-    box-shadow: 0 4px 14px rgba(58, 91, 156, 0.25);
+    box-shadow: 0 4px 14px rgba(22, 119, 255, 0.25);
   }
-  .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(58, 91, 156, 0.4); }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(22, 119, 255, 0.4); }
   .btn.ghost { background: transparent; color: var(--navy); border: 1.5px solid rgba(11, 25, 44, 0.2); box-shadow: none; }
   .btn.ghost:hover { background: rgba(11, 25, 44, 0.04); box-shadow: none; border-color: var(--navy); }
   /* Header button transitions */
@@ -159,12 +160,12 @@
   }
   .hero::before {
     content: ""; position: absolute; left: -10%; top: -15%; width: 680px; height: 680px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(167, 181, 154, 0.22) 0%, rgba(167, 181, 154, 0) 70%);
+    background: radial-gradient(circle, rgba(140, 203, 255, 0.22) 0%, rgba(140, 203, 255, 0) 70%);
     filter: blur(50px); z-index: 0; animation: float 11s ease-in-out infinite;
   }
   .hero::after {
     content: ""; position: absolute; right: -5%; bottom: -15%; width: 750px; height: 750px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(58, 91, 156, 0.16) 0%, rgba(58, 91, 156, 0) 70%);
+    background: radial-gradient(circle, rgba(22, 119, 255, 0.16) 0%, rgba(22, 119, 255, 0) 70%);
     filter: blur(65px); z-index: 0; animation: float 15s ease-in-out infinite reverse;
   }
   @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
@@ -200,7 +201,7 @@
     letter-spacing: -.025em; color: var(--white);
   }
   .hero h1 .accent { 
-    background: linear-gradient(120deg, #a7b59a 0%, #8ca4e6 100%);
+    background: linear-gradient(120deg, #8ccbff 0%, #5ba3ff 100%);
     -webkit-background-clip: text; color: transparent; 
   }
   .hero-sub { color: rgba(255, 255, 255, 0.7); font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin: 0 0 40px 0; text-align: left; }
@@ -208,19 +209,19 @@
   
   .belief {
     display: inline-flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(167, 181, 154, 0.3); border-radius: 999px; padding: 10px 22px;
+    border: 1px solid rgba(140, 203, 255, 0.3); border-radius: 999px; padding: 10px 22px;
     font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 34px;
     backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
-  .belief .pulse { width: 8px; height: 8px; border-radius: 50%; background: #a7b59a; box-shadow: 0 0 0 0 rgba(167, 181, 154, 0.7); animation: pulsing 2s infinite; }
-  @keyframes pulsing { 0% { box-shadow: 0 0 0 0 rgba(167, 181, 154, 0.6); } 70% { box-shadow: 0 0 0 8px rgba(167, 181, 154, 0); } 100% { box-shadow: 0 0 0 0 rgba(167, 181, 154, 0); } }
+  .belief .pulse { width: 8px; height: 8px; border-radius: 50%; background: #8ccbff; box-shadow: 0 0 0 0 rgba(140, 203, 255, 0.7); animation: pulsing 2s infinite; }
+  @keyframes pulsing { 0% { box-shadow: 0 0 0 0 rgba(140, 203, 255, 0.6); } 70% { box-shadow: 0 0 0 8px rgba(140, 203, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(140, 203, 255, 0); } }
 
   /* 연결 곡선 메타포 (부모 — ♡ — 자녀) */
   .connect-mark { display: block; width: 168px; max-width: 52vw; height: auto; margin: 0 0 26px 0; overflow: visible; }
   .connect-mark .cpath { fill: none; stroke: url(#cgrad); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
   .connect-mark .cdot { opacity: 0; transform-box: fill-box; transform-origin: center; }
-  .connect-mark .dotL { fill: #a7b59a; }
-  .connect-mark .dotR { fill: #506ab5; }
+  .connect-mark .dotL { fill: #8ccbff; }
+  .connect-mark .dotR { fill: #1677ff; }
   .connect-mark .cheart { fill: #e56b6f; opacity: 0; transform-box: fill-box; transform-origin: center bottom; filter: drop-shadow(0 2px 8px rgba(229,107,111,0.6)); }
   .connect-mark .cglow { fill: rgba(229,107,111,.22); opacity: 0; transform-box: fill-box; transform-origin: center; }
   .connect-mark .dotL { animation: cmPop .55s cubic-bezier(.2,.9,.3,1.5) .2s forwards; }
@@ -313,33 +314,33 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    background: rgba(167, 181, 154, 0.15);
-    color: #a7b59a;
+    background: rgba(140, 203, 255, 0.15);
+    color: #8ccbff;
     font-size: 11px;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 20px;
-    border: 1px solid rgba(167, 181, 154, 0.25);
+    border: 1px solid rgba(140, 203, 255, 0.25);
   }
   
   .dash-status .pulse-dot {
     width: 6px;
     height: 6px;
-    background: #a7b59a;
+    background: #8ccbff;
     border-radius: 50%;
-    box-shadow: 0 0 8px #a7b59a;
+    box-shadow: 0 0 8px #8ccbff;
     animation: pulseGlow 2s infinite;
   }
   @keyframes pulseGlow {
     0% { transform: scale(0.9); opacity: 0.6; }
-    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 10px #a7b59a; }
+    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 10px #8ccbff; }
     100% { transform: scale(0.9); opacity: 0.6; }
   }
   
   /* Ring Card */
   .ring-card {
-    background: linear-gradient(135deg, rgba(80, 106, 181, 0.12) 0%, rgba(11, 25, 44, 0.3) 100%);
-    border: 1px solid rgba(80, 106, 181, 0.22);
+    background: linear-gradient(135deg, rgba(22, 119, 255, 0.12) 0%, rgba(11, 25, 44, 0.3) 100%);
+    border: 1px solid rgba(22, 119, 255, 0.22);
     border-radius: 20px;
     padding: 14px;
     display: flex;
@@ -468,11 +469,11 @@
   }
   
   .stat-card.nutrition .stat-progress-val {
-    stroke: #a7b59a;
+    stroke: #8ccbff;
     animation: nutritionRing 1.8s ease-out forwards 0.3s;
   }
   .stat-card.sleep .stat-progress-val {
-    stroke: #8ca4e6;
+    stroke: #5ba3ff;
     animation: sleepRing 1.8s ease-out forwards 0.5s;
   }
   @keyframes nutritionRing { to { stroke-dashoffset: 20; } } /* 80% */
@@ -522,8 +523,8 @@
   }
   
   .floating-tag svg { width: 15px; height: 15px; flex-shrink: 0; }
-  .floating-tag.tag1 svg { color: #8ca4e6; }
-  .floating-tag.tag2 svg { color: #a7b59a; }
+  .floating-tag.tag1 svg { color: #5ba3ff; }
+  .floating-tag.tag2 svg { color: #8ccbff; }
   
   .floating-tag span {
     font-size: 12px;
@@ -543,7 +544,7 @@
     font-family: "Montserrat", sans-serif; font-size: 11px; letter-spacing: .25em; color: rgba(255,255,255,0.4);
   }
   .scroll-cue .mouse { width: 24px; height: 38px; border: 2px solid rgba(255,255,255,.2); border-radius: 14px; position: relative; }
-  .scroll-cue .mouse::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; border-radius: 2px; background: #a7b59a; transform: translateX(-50%); animation: scrolldot 1.8s ease-in-out infinite; }
+  .scroll-cue .mouse::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; border-radius: 2px; background: #8ccbff; transform: translateX(-50%); animation: scrolldot 1.8s ease-in-out infinite; }
   @keyframes scrolldot { 0% { opacity: 0; transform: translate(-50%, 0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translate(-50%, 12px); } 100% { opacity: 0; } }
 
   /* ---------- Hero animation control (dependent on .start-anim class) ---------- */
@@ -591,23 +592,23 @@
     background: radial-gradient(circle, rgba(247, 231, 206, 0.12) 0%, rgba(247, 231, 206, 0) 70%);
     animation: floatB 19s ease-in-out infinite; }
   .hero-bg .orb4 { width: 340px; height: 340px; right: 20%; top: 8%; filter: blur(55px);
-    background: radial-gradient(circle, rgba(80, 106, 181, 0.15) 0%, rgba(80, 106, 181, 0) 70%);
+    background: radial-gradient(circle, rgba(22, 119, 255, 0.15) 0%, rgba(22, 119, 255, 0) 70%);
     animation: floatB 23s ease-in-out infinite reverse; }
   @keyframes floatB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(22px,-28px) scale(1.08); } }
 
   /* 레이더 핑 — '가까이에서 살피는' 신호 */
   .hero-bg .ring { position: absolute; left: 50%; top: 45%; width: 540px; height: 540px;
-    margin: -270px 0 0 -270px; border-radius: 50%; border: 1.5px solid rgba(80, 106, 181, 0.1);
+    margin: -270px 0 0 -270px; border-radius: 50%; border: 1.5px solid rgba(22, 119, 255, 0.1);
     opacity: 0; animation: ping 7.5s ease-out infinite; }
-  .hero-bg .ring2 { border-color: rgba(167, 181, 154, 0.12); animation-delay: 2.5s; }
-  .hero-bg .ring3 { border-color: rgba(80, 106, 181, 0.08); animation-delay: 5s; }
+  .hero-bg .ring2 { border-color: rgba(140, 203, 255, 0.12); animation-delay: 2.5s; }
+  .hero-bg .ring3 { border-color: rgba(22, 119, 255, 0.08); animation-delay: 5s; }
   @keyframes ping { 0% { transform: scale(.22); opacity: 0; } 12% { opacity: .55; } 70% { opacity: 0; } 100% { transform: scale(1.5); opacity: 0; } }
 
   /* 떠오르는 건강 신호 파티클 */
   .hero-bg .particle { position: absolute; border-radius: 50%; opacity: 0;
-    background: radial-gradient(circle, rgba(167, 181, 154, 0.35) 0%, rgba(167, 181, 154, 0) 70%);
+    background: radial-gradient(circle, rgba(140, 203, 255, 0.35) 0%, rgba(140, 203, 255, 0) 70%);
     animation: drift 15s linear infinite; }
-  .hero-bg .particle.blue { background: radial-gradient(circle, rgba(80, 106, 181, 0.35) 0%, rgba(80, 106, 181, 0) 70%); }
+  .hero-bg .particle.blue { background: radial-gradient(circle, rgba(22, 119, 255, 0.35) 0%, rgba(22, 119, 255, 0) 70%); }
   .hero-bg .p1 { left: 12%; bottom: 16%; width: 10px; height: 10px; animation-delay: 0s;   animation-duration: 14s; }
   .hero-bg .p2 { left: 24%; bottom: 8%;  width: 7px;  height: 7px;  animation-delay: 3s;   animation-duration: 17s; }
   .hero-bg .p3 { left: 37%; bottom: 22%; width: 12px; height: 12px; animation-delay: 6s;   animation-duration: 13s; }
@@ -638,7 +639,7 @@
   /* thin transition seam between the dark hero and this dark section */
   .founding::after {
     content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; z-index: 2;
-    background: linear-gradient(90deg, transparent 8%, rgba(167,181,154,.5) 35%, rgba(80,106,181,.5) 65%, transparent 92%);
+    background: linear-gradient(90deg, transparent 8%, rgba(140,203,255,.5) 35%, rgba(22,119,255,.5) 65%, transparent 92%);
   }
   .founding .eyebrow { color: var(--champagne); -webkit-text-fill-color: var(--champagne); margin-bottom: 22px; }
   .founding blockquote {
@@ -664,7 +665,7 @@
   .curve-svg text { font-family: "Pretendard", sans-serif; fill: var(--muted); }
   .curve-svg .axis { stroke: rgba(11,25,44,.14); stroke-width: 1.5; }
   .curve-svg .thresh { stroke: rgba(11,25,44,.28); stroke-width: 1.5; stroke-dasharray: 5 5; }
-  .curve-svg .gain { fill: rgba(167,181,154,.18); opacity: 0; }
+  .curve-svg .gain { fill: rgba(140,203,255,.18); opacity: 0; }
   .curve-svg .lineA, .curve-svg .lineB { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
   .curve-svg .lineA { stroke: #aab4bf; stroke-width: 3; }
   .curve-svg .lineB { stroke: url(#bgrad); stroke-width: 4.5; }
@@ -698,17 +699,17 @@
   .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 920px; margin: 54px auto 0; position: relative; }
   .roadmap::before {
     content: ""; position: absolute; top: 30px; left: 12%; right: 12%; height: 2px;
-    background: linear-gradient(90deg, #6E8060, #506AB5); opacity: .4; z-index: 0;
+    background: linear-gradient(90deg, #8ccbff, #1677ff); opacity: .5; z-index: 0;
   }
   .rstep { position: relative; z-index: 1; text-align: center; }
   .rstep .rnum {
     width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 18px; display: grid; place-items: center;
-    background: var(--white); border: 2px solid rgba(94, 114, 87, 0.25);
+    background: var(--white); border: 2px solid rgba(22, 119, 255, 0.25);
     font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 17px; color: var(--navy);
     box-shadow: 0 8px 20px rgba(11, 25, 44, 0.06); transition: transform .3s, box-shadow .3s;
   }
-  .rstep:nth-child(1) .rnum { border-color: #8aa07e; color: #5E7257; }
-  .rstep:nth-child(4) .rnum { border-color: #6f88c4; color: #3A5B9C; }
+  .rstep:nth-child(1) .rnum { border-color: #5ba3ff; color: #0e5ad6; }
+  .rstep:nth-child(4) .rnum { border-color: #5ba3ff; color: #1677ff; }
   .rstep:hover .rnum { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(11, 25, 44, 0.12); }
   .rstep h4 { color: var(--navy); font-size: 16px; font-weight: 700; line-height: 1.4; }
   .rstep .ren { display: block; font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); margin-top: 5px; text-transform: uppercase; }
@@ -762,11 +763,11 @@
     text-transform: uppercase;
   }
   .parent-side .side-badge {
-    background: rgba(167, 181, 154, 0.15);
+    background: rgba(140, 203, 255, 0.15);
     color: var(--sage-deep);
   }
   .child-side .side-badge {
-    background: rgba(58, 91, 156, 0.12);
+    background: rgba(22, 119, 255, 0.12);
     color: var(--blue);
   }
   .problem-side h3 {
@@ -820,7 +821,7 @@
     top: 0;
     bottom: 0;
     width: 1.5px;
-    background: linear-gradient(180deg, rgba(167,181,154,0.2) 0%, rgba(229,107,111,0.5) 50%, rgba(58,91,156,0.2) 100%);
+    background: linear-gradient(180deg, rgba(140,203,255,0.2) 0%, rgba(229,107,111,0.5) 50%, rgba(22,119,255,0.2) 100%);
   }
   .gap-glow-dot {
     position: absolute;
@@ -881,11 +882,11 @@
   .vp-col .vsub { color: var(--blue); font-weight: 700; font-size: 17px; margin-bottom: 34px; }
   .vp-item { display: flex; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(11, 25, 44, 0.06); }
   .vp-item:first-of-type { border-top: none; }
-  .vp-item .vic { flex: none; width: 54px; height: 54px; border-radius: 14px; background: var(--white); display: grid; place-items: center; color: var(--sage-deep); border: 1px solid rgba(94, 114, 87, 0.22); box-shadow: 0 4px 10px rgba(94,114,87,0.1); }
+  .vp-item .vic { flex: none; width: 54px; height: 54px; border-radius: 14px; background: var(--white); display: grid; place-items: center; color: var(--sage-deep); border: 1px solid rgba(22, 119, 255, 0.22); box-shadow: 0 4px 10px rgba(22,119,255,0.1); }
   .vp-item .vic svg { width: 24px; height: 24px; }
   .vp-item h4 { color: var(--navy); font-size: 19px; margin-bottom: 8px; font-weight: 700; }
   .vp-item p { font-size: 16.5px; color: var(--muted); line-height: 1.7; }
-  .aip-note { margin-top: 40px; font-size: 16px; color: var(--muted); background: var(--white); border-radius: 16px; padding: 26px 30px; border: 1px solid rgba(94, 114, 87, 0.28); box-shadow: 0 4px 12px rgba(94, 114, 87, 0.05); line-height: 1.7; }
+  .aip-note { margin-top: 40px; font-size: 16px; color: var(--muted); background: var(--white); border-radius: 16px; padding: 26px 30px; border: 1px solid rgba(22, 119, 255, 0.28); box-shadow: 0 4px 12px rgba(22, 119, 255, 0.05); line-height: 1.7; }
   .aip-note b { color: var(--sage-deep); font-weight: 800; font-size: 17px; }
 
   /* ---------- Vision ---------- */
@@ -908,7 +909,7 @@
   .team { background: var(--ivory); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
   .member { background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid rgba(11, 25, 44, 0.05); transition: transform .3s, box-shadow .3s; box-shadow: var(--shadow-soft); }
-  .member:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(94, 114, 87, 0.25); }
+  .member:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(22, 119, 255, 0.25); }
   .member .avatar { width: 96px; height: 96px; border-radius: 24px; background: #faf7f0; display: grid; place-items: center; color: var(--navy); font-weight: 800; font-family: "Montserrat", sans-serif; border: 1px solid rgba(11, 25, 44, 0.08); margin-bottom: 24px; overflow: hidden; font-size: 19px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
   .member .avatar.photo { padding: 0; }
   .member .avatar.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
@@ -982,7 +983,7 @@
     .problem-side.parent-side, .problem-side.child-side { text-align: center; align-items: center; }
     .parent-side .side-tags, .child-side .side-tags { justify-content: center; }
     .center-gap { width: 100%; height: 50px; }
-    .gap-line { left: 0; right: 0; top: 50%; bottom: auto; height: 1.5px; width: auto; background: linear-gradient(90deg, rgba(167,181,154,0.2) 0%, rgba(229,107,111,0.5) 50%, rgba(58,91,156,0.2) 100%); }
+    .gap-line { left: 0; right: 0; top: 50%; bottom: auto; height: 1.5px; width: auto; background: linear-gradient(90deg, rgba(140,203,255,0.2) 0%, rgba(229,107,111,0.5) 50%, rgba(22,119,255,0.2) 100%); }
     .vp-grid, .team-grid { grid-template-columns: 1fr; }
     .founding-grid { grid-template-columns: 1fr; gap: 36px; }
     .founder-photo { max-width: 320px; margin: 0 auto; }
@@ -1072,7 +1073,7 @@
     position: absolute; left: 50%; top: 50%;
     width: 250px; height: 250px; margin: -125px 0 0 -125px;
     border-radius: 50%; z-index: 0; pointer-events: none;
-    background: radial-gradient(circle, rgba(167,181,154,0.45) 0%, rgba(80,106,181,0.22) 36%, transparent 68%);
+    background: radial-gradient(circle, rgba(140,203,255,0.45) 0%, rgba(22,119,255,0.22) 36%, transparent 68%);
     filter: blur(6px);
     animation: introGlow 2.6s ease-in-out infinite;
   }
@@ -1089,7 +1090,7 @@
     letter-spacing: 0.28em;
     text-indent: 0.28em; /* optical centering for trailing letter-spacing */
     color: transparent;
-    background: linear-gradient(110deg, #ffffff 36%, #a7b59a 46%, #dbe6ff 50%, #a7b59a 54%, #ffffff 64%);
+    background: linear-gradient(110deg, #ffffff 36%, #8ccbff 46%, #dbe6ff 50%, #8ccbff 54%, #ffffff 64%);
     background-size: 250% 100%;
     -webkit-background-clip: text; background-clip: text;
     animation: introShine 2.8s linear infinite 0.6s;
@@ -1124,8 +1125,8 @@
   /* 스플래시 배경 모션 (떠다니는 오브) */
   .intro-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
   .intro-orb { position: absolute; border-radius: 50%; filter: blur(60px); }
-  .intro-orb.io1 { width: 360px; height: 360px; left: 15%; top: 20%; background: radial-gradient(circle, rgba(167,181,154,.32) 0%, transparent 70%); animation: introFloat 9s ease-in-out infinite; }
-  .intro-orb.io2 { width: 430px; height: 430px; right: 11%; bottom: 14%; background: radial-gradient(circle, rgba(80,106,181,.28) 0%, transparent 70%); animation: introFloat 12s ease-in-out infinite reverse; }
+  .intro-orb.io1 { width: 360px; height: 360px; left: 15%; top: 20%; background: radial-gradient(circle, rgba(140,203,255,.32) 0%, transparent 70%); animation: introFloat 9s ease-in-out infinite; }
+  .intro-orb.io2 { width: 430px; height: 430px; right: 11%; bottom: 14%; background: radial-gradient(circle, rgba(22,119,255,.28) 0%, transparent 70%); animation: introFloat 12s ease-in-out infinite reverse; }
   .intro-orb.io3 { width: 280px; height: 280px; left: 60%; top: 58%; background: radial-gradient(circle, rgba(247,231,206,.12) 0%, transparent 70%); animation: introFloat 15s ease-in-out infinite; }
   @keyframes introFloat { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(26px,-24px) scale(1.12); } }
 
@@ -1138,8 +1139,8 @@
   }
   .science::before {
     content: ""; position: absolute; inset: 0; z-index: 0;
-    background: radial-gradient(circle at 80% 20%, rgba(58, 91, 156, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(167, 181, 154, 0.08) 0%, transparent 50%);
+    background: radial-gradient(circle at 80% 20%, rgba(22, 119, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(140, 203, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
   }
   .science .wrap { position: relative; z-index: 2; }
@@ -1164,13 +1165,13 @@
   .sci-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 30px rgba(167, 181, 154, 0.15);
-    border-color: rgba(167, 181, 154, 0.4);
+                0 0 30px rgba(140, 203, 255, 0.15);
+    border-color: rgba(140, 203, 255, 0.4);
   }
   .sci-icon-wrap {
     width: 60px; height: 60px; border-radius: 16px;
-    background: rgba(167, 181, 154, 0.1);
-    border: 1px solid rgba(167, 181, 154, 0.2);
+    background: rgba(140, 203, 255, 0.1);
+    border: 1px solid rgba(140, 203, 255, 0.2);
     color: var(--sage);
     display: grid; place-items: center;
     margin-bottom: 28px;
@@ -1211,8 +1212,8 @@
     align-self: flex-start;
   }
   .sci-badge.sage {
-    background: rgba(167, 181, 154, 0.08);
-    border: 1px solid rgba(167, 181, 154, 0.2);
+    background: rgba(140, 203, 255, 0.08);
+    border: 1px solid rgba(140, 203, 255, 0.2);
     color: var(--sage);
   }
   
@@ -1232,7 +1233,7 @@
   <div class="intro-content">
     <div class="intro-logo">
       <span class="intro-glow" aria-hidden="true"></span>
-      <img class="intro-svg" src="assets/symbol-white.png" alt="라이프메디 심볼" />
+      <img class="intro-svg" src="assets/LogoLifemedi_Symbol.svg" alt="라이프메디 심볼" />
     </div>
     <div class="intro-text-wrap">
       <p class="intro-wordmark">LIFEMEDI</p>
@@ -1251,7 +1252,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="라이프메디 홈">
-      <img class="brand-logo" src="assets/logo-kr-en.svg" alt="라이프메디 LIFEMEDI"
+      <img class="brand-logo" src="assets/LogoLifemedi_Horizontal.svg" alt="라이프메디 LIFEMEDI"
            onerror="this.outerHTML='&lt;svg class=\'logo\' style=\'width:42px;height:42px;color:var(--navy)\'&gt;&lt;use href=\'#lm-logo\'/&gt;&lt;/svg&gt;&lt;span class=\'name\'&gt;&lt;b&gt;라이프메디&lt;/b&gt;&lt;small&gt;LIFEMEDI&lt;/small&gt;&lt;/span&gt;'">
     </a>
     <div class="nav-menu-wrapper">
@@ -1291,8 +1292,8 @@
         <svg class="connect-mark" viewBox="0 0 180 92" role="img" aria-label="부모와 자녀를 잇는 연결">
           <defs>
             <linearGradient id="cgrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#a7b59a"/>
-              <stop offset="1" stop-color="#506ab5"/>
+              <stop offset="0" stop-color="#8ccbff"/>
+              <stop offset="1" stop-color="#1677ff"/>
             </linearGradient>
           </defs>
           <path class="cpath pathL" pathLength="1" d="M26,68 C50,68 70,58 90,42"/>
@@ -1350,8 +1351,8 @@
                       </filter>
                     </defs>
                     <circle cx="30" cy="30" r="21" fill="none" stroke="url(#ring-grad)" stroke-width="5" filter="url(#ring-glow)" />
-                    <circle cx="30" cy="30" r="17" fill="none" stroke="#506ab5" stroke-width="1.5" opacity="0.5" />
-                    <circle cx="38" cy="22" r="2.5" fill="#a7b59a" filter="url(#ring-glow)">
+                    <circle cx="30" cy="30" r="17" fill="none" stroke="#1677ff" stroke-width="1.5" opacity="0.5" />
+                    <circle cx="38" cy="22" r="2.5" fill="#8ccbff" filter="url(#ring-glow)">
                       <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
                     </circle>
                   </svg>
@@ -1374,9 +1375,9 @@
                 <svg class="pulse-chart-svg" viewBox="0 0 300 60">
                   <defs>
                     <linearGradient id="pulse-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#506ab5" />
+                      <stop offset="0%" stop-color="#1677ff" />
                       <stop offset="50%" stop-color="#e56b6f" />
-                      <stop offset="100%" stop-color="#506ab5" />
+                      <stop offset="100%" stop-color="#1677ff" />
                     </linearGradient>
                   </defs>
                   <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
@@ -1470,8 +1471,8 @@
            aria-label="나이에 따른 건강 지수 곡선. 한국인 기대수명은 83.7세, 건강수명은 65.5세로 약 18년의 격차가 있으며, 라이프메디는 이 격차를 줄이는 것을 지향합니다.">
         <defs>
           <linearGradient id="bgrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#6E8060"/>
-            <stop offset="0.6" stop-color="#506AB5"/>
+            <stop offset="0" stop-color="#8ccbff"/>
+            <stop offset="0.6" stop-color="#1677ff"/>
             <stop offset="1" stop-color="#0B192C"/>
           </linearGradient>
         </defs>
@@ -1770,7 +1771,7 @@
     <div class="foot-grid">
       <div>
         <div class="brand">
-          <img src="assets/symbol-white.png" alt="라이프메디 심볼" style="width:34px;height:34px;display:block" />
+          <img src="assets/LogoLifemedi_Symbol.svg" alt="라이프메디 심볼" style="width:34px;height:34px;display:block" />
           <span class="name"><b style="color:#fff;font-size:18px">라이프메디</b><small style="color:var(--sage)">LIFEMEDI</small></span>
         </div>
         <p>건강 수명을 늘리는 것이 진짜 헬스케어다 — 자녀 세대의 마음에서 시작된 시니어 헬스케어 전문 기업.</p>
