@@ -53,6 +53,7 @@
     --navy: #0B192C;
     --ivory: #FDFBF7;
     --blue: #1677ff;
+    --blue-soft: #3f76d6;  /* 넓은 면적용: 채도 낮춘 차분한 블루 */
     --gold: #D4AF37;
     --gold-ink: #9A7B1F; /* 밝은 배경에서 읽히는 진한 골드 */
     --champagne: #F7E7CE;
@@ -65,6 +66,7 @@
     --radius: 20px;
     --maxw: 1180px;
     --gradient-brand: linear-gradient(135deg, #0B192C, #1677ff);
+    --gradient-brand-soft: linear-gradient(135deg, #0B192C, var(--blue-soft));
     --gradient-gold: linear-gradient(135deg, #D4AF37, #F3E5AB, #D4AF37);
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: 1px solid rgba(255, 255, 255, 0.5);
@@ -621,7 +623,7 @@
 
 
   /* ---------- Founding story ---------- */
-  .founding { background: linear-gradient(180deg, #050b14 0%, rgba(5,11,20,0) 22%), var(--gradient-brand); color: #dfe6ef; position: relative; overflow: hidden; padding: 132px 0 120px; }
+  .founding { background: linear-gradient(180deg, #050b14 0%, rgba(5,11,20,0) 22%), var(--gradient-brand-soft); color: #dfe6ef; position: relative; overflow: hidden; padding: 132px 0 120px; }
   .founding-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 60px; align-items: center; }
   .founder-photo { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.4); aspect-ratio: 4 / 5; }
   .founder-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
@@ -695,7 +697,7 @@
   .curve-cap { text-align: center; margin-top: 14px; font-size: 12.5px; color: #98a1ad; }
 
   /* ---------- Intro / expansion roadmap ---------- */
-  .intro h2 .hl { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .intro h2 .hl { background: var(--gradient-brand-soft); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 920px; margin: 54px auto 0; position: relative; }
   .roadmap::before {
     content: ""; position: absolute; top: 30px; left: 12%; right: 12%; height: 2px;
@@ -895,7 +897,7 @@
     text-align: center; max-width: 900px; margin: 0 auto 30px; font-size: clamp(24px, 3vw, 34px);
     font-weight: 700; color: var(--navy); line-height: 1.7; word-break: keep-all;
   }
-  .vision .belief-quote .hl { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .vision .belief-quote .hl { background: var(--gradient-brand-soft); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .vision-tail { text-align: center; max-width: 680px; margin: 0 auto; font-size: clamp(17px, 2vw, 20px); color: var(--muted); line-height: 1.85; word-break: keep-all; }
   .vision-band {
     margin-top: 60px; height: 460px; width: 100%;
@@ -924,7 +926,7 @@
   .member p { font-size: 16.5px; color: var(--muted); line-height: 1.7; }
 
   /* ---------- Closing CTA ---------- */
-  .closing { background: var(--gradient-brand); color: #e7edf5; text-align: center; padding: 150px 0; position: relative; overflow: hidden; }
+  .closing { background: var(--gradient-brand-soft); color: #e7edf5; text-align: center; padding: 150px 0; position: relative; overflow: hidden; }
   /* full-bleed family photo melted into the navy section */
   .closing::before {
     content: ""; position: absolute; inset: 0; z-index: 0;
