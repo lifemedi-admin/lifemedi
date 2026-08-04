@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>라이프메디 LIFEMEDI — 건강 수명을 늘리는 시니어 헬스케어 기업</title>
-<meta name="description" content="라이프메디는 부모가 더 오래 건강하게 주도적으로 살아가도록, 자녀 세대의 마음을 담아 요양병원 현장의 고민에서 시작된 시니어 헬스케어 전문 기업입니다." />
+<title>라이프메디 LIFEMEDI — 영양·데이터·AI로 연결되는 시니어 디지털 헬스케어</title>
+<meta name="description" content="라이프메디는 영양·데이터·AI로 연결되는 시니어 디지털 헬스케어 기업입니다. 시니어 영양 보충 음료 '리메디센'에서 시작해 스마트링과 AI 라이프케어 플랫폼으로 부모의 일상을 지키고 가족의 안심을 잇습니다." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="라이프메디 LIFEMEDI" />
 <meta property="og:title" content="라이프메디 LIFEMEDI" />
@@ -32,10 +32,13 @@
   "url": "https://lifemedi.kr/",
   "logo": "https://lifemedi.kr/assets/og-image.jpg",
   "image": "https://lifemedi.kr/assets/og-image.jpg",
-  "description": "부모와 자녀를 잇는 시니어 헬스케어. 부모의 영양과 일상 루틴을 설계해 더 오래 건강하게, 가족이 안심하도록 돕습니다.",
+  "description": "영양·데이터·AI로 연결되는 시니어 디지털 헬스케어 기업. 시니어 영양 보충 음료 '리메디센'에서 시작해 스마트링과 AI 라이프케어 플랫폼으로 부모의 일상을 지키고 가족의 안심을 잇습니다.",
+  "slogan": "건강 수명을 늘리는 것이 진짜 헬스케어입니다",
   "email": "biz@lifemedi.kr",
   "taxID": "576-88-03778",
-  "founder": { "@type": "Person", "name": "김우성" },
+  "foundingDate": "2026-05-08",
+  "founder": { "@type": "Person", "name": "김우성", "jobTitle": "대표이사" },
+  "knowsAbout": ["시니어 헬스케어", "전노쇠", "노쇠 예방", "시니어 영양", "케어푸드", "웨어러블 데이터", "AI 라이프케어"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "강북구 한천로139길 42, 3층 301호 (수유동, 영남빌딩)",
@@ -208,6 +211,9 @@
   }
   .hero-sub { color: rgba(255, 255, 255, 0.7); font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin: 0 0 40px 0; text-align: left; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start; }
+  /* 어두운 히어로 위의 ghost 버튼은 흰색으로 (기본 ghost는 navy라 읽히지 않음) */
+  .hero .btn.ghost { color: var(--white); border-color: rgba(255, 255, 255, .42); }
+  .hero .btn.ghost:hover { background: rgba(255, 255, 255, .1); border-color: var(--white); }
   
   .belief {
     display: inline-flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.08);
@@ -1223,6 +1229,280 @@
     .sci-grid { grid-template-columns: 1fr; gap: 24px; }
     .sci-card { padding: 36px 28px; }
   }
+
+  /* ---------- Problem: 기록되지 않는 공백 타임라인 ---------- */
+  .gap-timeline {
+    margin-top: 32px; background: var(--white); border: 1px solid rgba(11, 25, 44, .06);
+    border-radius: 28px; padding: 44px 40px; box-shadow: var(--shadow-soft);
+  }
+  .gt-head { text-align: center; margin-bottom: 34px; }
+  .gt-head h3 { font-size: clamp(21px, 2.4vw, 27px); font-weight: 800; margin-bottom: 10px; }
+  .gt-head p { color: var(--muted); font-size: 16px; }
+  .gt-rail { display: grid; grid-template-columns: 1fr auto 1fr; gap: 26px; align-items: stretch; }
+  .gt-col { display: flex; flex-direction: column; gap: 10px; }
+  .gt-label {
+    font-size: 12.5px; font-weight: 800; letter-spacing: .1em; margin-bottom: 6px;
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .gt-col.early .gt-label { color: var(--sage-deep); }
+  .gt-col.late .gt-label { color: #c2410c; }
+  .gt-chip {
+    display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: var(--ink);
+    background: var(--ivory); border: 1px solid rgba(11, 25, 44, .06); border-radius: 12px; padding: 11px 15px;
+  }
+  .gt-chip svg { width: 17px; height: 17px; flex: none; color: var(--sage-deep); }
+  .gt-col.late .gt-chip { background: #fff5f2; border-color: rgba(194, 65, 12, .14); }
+  .gt-col.late .gt-chip svg { color: #c2410c; }
+  .gt-void {
+    width: 210px; border-radius: 18px; border: 2px dashed rgba(194, 65, 12, .3);
+    background: linear-gradient(180deg, #fff8f5, #fff);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 26px 18px; gap: 10px;
+  }
+  .gt-void .gv-mark {
+    width: 46px; height: 46px; border-radius: 50%; background: #fee2e2; color: #c2410c;
+    display: grid; place-items: center;
+  }
+  .gt-void .gv-mark svg { width: 22px; height: 22px; }
+  .gt-void b { font-size: 17px; color: var(--navy); font-weight: 800; }
+  .gt-void span { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .gt-void .gv-dur {
+    font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .06em;
+    color: #c2410c; background: #fee2e2; border-radius: 99px; padding: 4px 12px;
+  }
+  .gt-foot {
+    margin-top: 30px; background: var(--navy); color: #dbe6f5; border-radius: 18px;
+    padding: 24px 30px; font-size: 16.5px; line-height: 1.7; text-align: center;
+  }
+  .gt-foot b { color: var(--sage); font-weight: 800; }
+
+  /* ---------- Problem: 전노쇠 회복 구간 ---------- */
+  .frailty { margin-top: 32px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; }
+  .fr-card {
+    background: var(--white); border: 1px solid rgba(11, 25, 44, .06);
+    border-radius: 28px; padding: 40px 36px; box-shadow: var(--shadow-soft);
+    display: flex; flex-direction: column;
+  }
+  .fr-card .fr-note { margin-top: auto; padding-top: 20px; }
+  .fr-card > h3 { font-size: 21px; font-weight: 800; margin-bottom: 6px; }
+  .fr-card > .fr-sub { color: var(--muted); font-size: 15.5px; margin-bottom: 28px; }
+  .fr-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .fr-stage {
+    border-radius: 16px; padding: 20px 12px; text-align: center; border: 1.5px solid transparent;
+    background: #f1f5f9;
+  }
+  .fr-stage .fs-en {
+    font-family: "Montserrat", sans-serif; font-size: 12.5px; font-weight: 800;
+    letter-spacing: .05em; color: var(--muted); display: block;
+  }
+  .fr-stage .fs-kr { font-size: 15px; font-weight: 700; color: var(--navy); margin-top: 5px; display: block; }
+  .fr-stage .fs-pct {
+    font-family: "Montserrat", sans-serif; font-size: 23px; font-weight: 800; color: var(--navy);
+    margin-top: 10px; display: block; letter-spacing: -.02em;
+  }
+  .fr-stage.robust { background: #ecfdf5; } .fr-stage.robust .fs-en, .fr-stage.robust .fs-pct { color: #047857; }
+  .fr-stage.pre { background: #fff7ed; border-color: #f59e0b; box-shadow: 0 8px 22px rgba(245, 158, 11, .18); }
+  .fr-stage.pre .fs-en, .fr-stage.pre .fs-pct { color: #b45309; }
+  .fr-stage.frail { background: #fef2f2; } .fr-stage.frail .fs-en, .fr-stage.frail .fs-pct { color: #b91c1c; }
+  .fr-stage.dep { background: #f1f5f9; }
+  .fr-window {
+    margin-top: 18px; display: flex; align-items: center; gap: 12px;
+    background: #fffbeb; border: 1px solid rgba(245, 158, 11, .3); border-radius: 14px; padding: 15px 20px;
+  }
+  .fr-window svg { width: 22px; height: 22px; color: #b45309; flex: none; }
+  .fr-window p { font-size: 15.5px; color: #78350f; line-height: 1.6; }
+  .fr-window b { font-weight: 800; }
+  .fr-flow { display: grid; gap: 12px; margin-top: 4px; }
+  .fr-row { display: grid; grid-template-columns: 74px 1fr auto; align-items: center; gap: 14px; }
+  .fr-row .frl { font-size: 15px; font-weight: 700; }
+  .fr-row .frbar { height: 10px; border-radius: 99px; background: #eef2f6; overflow: hidden; }
+  .fr-row .frbar i { display: block; height: 100%; border-radius: 99px; }
+  .fr-row .frv { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; }
+  .fr-row.good .frl, .fr-row.good .frv { color: #047857; } .fr-row.good .frbar i { background: #10b981; }
+  .fr-row.keep .frl, .fr-row.keep .frv { color: #b45309; } .fr-row.keep .frbar i { background: #f59e0b; }
+  .fr-row.bad  .frl, .fr-row.bad  .frv { color: #b91c1c; } .fr-row.bad  .frbar i { background: #ef4444; }
+  .fr-note { font-size: 13px; color: #94a3b8; line-height: 1.65; margin-top: 20px; }
+
+  /* ---------- Product ---------- */
+  .product { background: var(--ivory); }
+  .pr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; }
+  .pr-card {
+    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 26px;
+    padding: 38px 32px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column;
+    transition: transform .35s cubic-bezier(.165,.84,.44,1), box-shadow .35s, border-color .35s;
+    position: relative;
+  }
+  .pr-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-deep); border-color: rgba(22, 119, 255, .25); }
+  .pr-card.lead-product { border-color: rgba(22, 119, 255, .3); box-shadow: 0 14px 36px rgba(22, 119, 255, .12); }
+  .pr-step {
+    font-family: "Montserrat", sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: .12em;
+    color: var(--muted); margin-bottom: 16px;
+  }
+  .pr-visual {
+    width: 66px; height: 66px; border-radius: 20px; display: grid; place-items: center; margin-bottom: 22px;
+    background: linear-gradient(140deg, rgba(22,119,255,.1), rgba(140,203,255,.14));
+    border: 1px solid rgba(22, 119, 255, .18); color: var(--sage-deep);
+  }
+  .pr-visual svg { width: 30px; height: 30px; }
+  .pr-name { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; margin-bottom: 8px; }
+  .pr-name h3 { font-size: 24px; font-weight: 800; }
+  .pr-name .pr-en { font-family: "Montserrat", sans-serif; font-size: 13.5px; font-weight: 600; color: var(--muted); letter-spacing: .03em; }
+  .pr-tag { font-size: 15px; color: var(--sage-deep); font-weight: 700; margin-bottom: 18px; }
+  .pr-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 22px; }
+  .pr-specs { list-style: none; display: grid; gap: 11px; margin-bottom: 26px; }
+  .pr-specs li { display: flex; gap: 10px; font-size: 15.5px; color: var(--ink); line-height: 1.6; }
+  .pr-specs li::before {
+    content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blue); margin-top: 10px;
+  }
+  .pr-status {
+    margin-top: auto; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    font-size: 13.5px; font-weight: 700; border-radius: 99px; padding: 8px 16px;
+  }
+  .pr-status.soon { background: rgba(22, 119, 255, .1); color: var(--sage-deep); border: 1px solid rgba(22, 119, 255, .22); }
+  .pr-status.dev { background: rgba(11, 25, 44, .05); color: var(--muted); border: 1px solid rgba(11, 25, 44, .1); }
+  .pr-status .pr-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .pr-status.soon .pr-dot { animation: pulsing 2s infinite; }
+
+  .pr-band {
+    margin-top: 34px; background: var(--gradient-brand-soft); color: #fff; border-radius: 24px;
+    padding: 34px 40px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap;
+    justify-content: center; text-align: center;
+  }
+  .pr-band .pb-ico { width: 52px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.12); display: grid; place-items: center; flex: none; }
+  .pr-band .pb-ico svg { width: 25px; height: 25px; color: var(--sage); }
+  .pr-band p { font-size: clamp(17px, 2vw, 21px); font-weight: 700; line-height: 1.6; }
+  .pr-band p .pb-em { color: var(--sage); }
+
+  .pr-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+  .pf-step {
+    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 18px;
+    padding: 24px 26px; position: relative;
+  }
+  .pf-step .pf-n {
+    font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .1em;
+    color: var(--blue); display: block; margin-bottom: 8px;
+  }
+  .pf-step h4 { font-size: 17.5px; font-weight: 800; margin-bottom: 6px; }
+  .pf-step p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+  .pf-step:not(:last-child)::after {
+    content: "→"; position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+    color: var(--blue); font-size: 19px; font-weight: 700; z-index: 1;
+  }
+
+  /* ---------- Why Now ---------- */
+  .whynow { background: var(--ivory); }
+  .wn-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+  .wn-card {
+    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 24px;
+    padding: 36px 34px; display: flex; gap: 26px; align-items: flex-start;
+    transition: transform .3s, box-shadow .3s; box-shadow: var(--shadow-soft);
+  }
+  .wn-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-deep); }
+  .wn-fig { flex: none; text-align: center; min-width: 118px; }
+  .wn-fig .wn-num {
+    font-family: "Montserrat", sans-serif; font-size: clamp(32px, 4vw, 42px); font-weight: 800;
+    color: var(--blue); letter-spacing: -.03em; line-height: 1.1; display: block;
+  }
+  .wn-fig .wn-unit { font-size: 13.5px; font-weight: 700; color: var(--muted); display: block; margin-top: 6px; }
+  .wn-body h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; line-height: 1.45; }
+  .wn-body p { font-size: 15.5px; color: var(--muted); line-height: 1.7; }
+  .wn-body .wn-src { font-size: 12.5px; color: #94a3b8; margin-top: 12px; display: block; }
+  .wn-market {
+    margin-top: 26px; border-radius: 24px; padding: 32px 38px; text-align: center;
+    background: var(--white); border: 1px solid rgba(22, 119, 255, .2);
+  }
+  .wn-market p { font-size: clamp(17px, 2vw, 20px); color: var(--navy); font-weight: 700; line-height: 1.65; }
+  .wn-market p b { color: var(--blue); font-family: "Montserrat", sans-serif; font-weight: 800; }
+  .wn-market span { display: block; font-size: 12.5px; color: #94a3b8; margin-top: 12px; }
+
+  /* ---------- Team: leadership + hiring + partners ---------- */
+  .lead-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 60px; }
+  .leader {
+    background: var(--white); border-radius: 26px; padding: 38px; border: 1px solid rgba(11, 25, 44, .05);
+    box-shadow: var(--shadow-soft); transition: transform .3s, box-shadow .3s, border-color .3s;
+    display: flex; flex-direction: column;
+  }
+  .leader:hover { transform: translateY(-6px); box-shadow: var(--shadow-deep); border-color: rgba(22, 119, 255, .22); }
+  .ld-top { display: flex; gap: 24px; align-items: center; margin-bottom: 26px; }
+  .ld-photo {
+    width: 112px; height: 132px; border-radius: 20px; overflow: hidden; flex: none;
+    background: #eef2f6; border: 1px solid rgba(11, 25, 44, .07);
+  }
+  .ld-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+  .ld-role {
+    font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .1em;
+    color: var(--sage-deep);
+  }
+  .ld-name { font-size: 25px; font-weight: 800; color: var(--navy); margin: 6px 0 8px; }
+  .ld-name small { font-size: 15px; font-weight: 600; color: var(--muted); margin-left: 7px; }
+  .ld-line { font-size: 15.5px; color: var(--muted); line-height: 1.65; }
+  .ld-block + .ld-block { margin-top: 20px; }
+  .ld-block h5 {
+    font-size: 12.5px; font-weight: 800; letter-spacing: .1em; color: var(--navy);
+    background: #eef2f6; border-radius: 7px; padding: 5px 11px; display: inline-block; margin-bottom: 13px;
+  }
+  .ld-block ul { list-style: none; display: grid; gap: 9px; }
+  .ld-block li { display: flex; gap: 10px; font-size: 15.5px; color: var(--muted); line-height: 1.6; }
+  .ld-block li::before {
+    content: ""; flex: none; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--sage-deep); margin-top: 10px; opacity: .55;
+  }
+  .hiring-head { margin-top: 60px; text-align: center; }
+  .hiring-head h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .hiring-head p { color: var(--muted); font-size: 16px; }
+  .hiring-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
+  .hire {
+    background: var(--white); border: 1.5px dashed rgba(22, 119, 255, .3); border-radius: 22px;
+    padding: 30px 32px; display: flex; gap: 20px; align-items: flex-start; transition: border-color .3s, background .3s;
+  }
+  .hire:hover { border-color: var(--blue); background: #f8fbff; }
+  .hire .hr-ic {
+    width: 50px; height: 50px; border-radius: 15px; flex: none; display: grid; place-items: center;
+    background: rgba(22, 119, 255, .08); color: var(--sage-deep); border: 1px solid rgba(22, 119, 255, .18);
+  }
+  .hire .hr-ic svg { width: 23px; height: 23px; }
+  .hire h4 { font-size: 18.5px; font-weight: 800; margin-bottom: 7px; }
+  .hire h4 .tbd { font-size: 13.5px; color: var(--blue); font-weight: 700; margin-left: 7px; }
+  .hire p { font-size: 15.5px; color: var(--muted); line-height: 1.65; }
+  .partners { margin-top: 60px; border-top: 1px solid rgba(11, 25, 44, .08); padding-top: 44px; }
+  .partners > h3 { text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .1em; color: var(--muted); margin-bottom: 28px; }
+  .pt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .pt-item {
+    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 16px;
+    padding: 22px 18px; text-align: center; transition: transform .3s, box-shadow .3s;
+  }
+  .pt-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+  .pt-item b { display: block; font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .pt-item span { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+
+  /* ---------- Responsive: new sections ---------- */
+  @media(max-width:980px) {
+    .frailty { grid-template-columns: 1fr; }
+    .pr-grid, .pr-flow { grid-template-columns: 1fr; }
+    .pf-step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
+    .pr-flow { gap: 32px; }
+    .wn-grid { grid-template-columns: 1fr; }
+    .lead-grid { grid-template-columns: 1fr; }
+    .pt-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width:900px) {
+    .gt-rail { grid-template-columns: 1fr; }
+    .gt-void { width: 100%; padding: 22px; }
+    .gap-timeline { padding: 34px 24px; }
+    .fr-card { padding: 32px 24px; }
+    .fr-stages { grid-template-columns: repeat(2, 1fr); }
+    .hiring-grid { grid-template-columns: 1fr; }
+    .pr-band { padding: 28px 24px; }
+    .leader { padding: 30px 24px; }
+    .ld-top { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .wn-card { flex-direction: column; gap: 16px; padding: 30px 26px; }
+    .wn-fig { text-align: left; }
+  }
+  @media(max-width:560px) {
+    .pt-grid { grid-template-columns: 1fr; }
+    .fr-stages { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1262,9 +1542,9 @@
         <ul>
           <li><a href="#story">시작</a></li>
           <li><a href="#belief">신념</a></li>
-          <li><a href="#science">과학</a></li>
           <li><a href="#problem">문제</a></li>
-          <li><a href="#vision">비전</a></li>
+          <li><a href="#product">제품</a></li>
+          <li><a href="#science">과학</a></li>
           <li><a href="#team">팀</a></li>
         </ul>
       </nav>
@@ -1523,15 +1803,15 @@
 <section class="intro center">
   <div class="wrap sec-head reveal">
     <p class="eyebrow" style="display:inline-block">우리가 하는 일</p>
-    <h2>부모의 건강 기능을 지키는 <span class="hl">균형영양식</span>에서 시작해,<br><span class="hl">부모–자녀를 잇는 케어 플랫폼</span>으로 확장합니다</h2>
-    <p class="lead" style="margin-top:20px">부모에게는 부담 없는 건강관리 경험을, 자녀에게는 부모에 관한 안심을 전합니다.</p>
+    <h2>부모의 영양을 채우는 <span class="hl">리메디센</span>에서 시작해,<br><span class="hl">부모–자녀를 잇는 라이프케어 플랫폼</span>으로 확장합니다</h2>
+    <p class="lead" style="margin-top:20px">중요한 것은 변화가 시작되는 시기에 어떻게 먹고 움직이며, 그 변화를 어떻게 살피고 필요한 지원으로 연결하느냐입니다.</p>
   </div>
   <div class="wrap">
     <div class="roadmap reveal">
-      <div class="rstep"><div class="rnum">01</div><h4>맞춤 균형영양식</h4><span class="ren">Nutrition</span></div>
-      <div class="rstep"><div class="rnum">02</div><h4>섭취 루틴 케어</h4><span class="ren">Routine</span></div>
-      <div class="rstep"><div class="rnum">03</div><h4>부모–자녀 연결</h4><span class="ren">Platform</span></div>
-      <div class="rstep"><div class="rnum">04</div><h4>웨어러블 데이터</h4><span class="ren">Wearable</span></div>
+      <div class="rstep"><div class="rnum">01</div><h4>영양 섭취 지원</h4><span class="ren">Nutrition</span></div>
+      <div class="rstep"><div class="rnum">02</div><h4>신체 활동 유지</h4><span class="ren">Activity</span></div>
+      <div class="rstep"><div class="rnum">03</div><h4>생활 변화 관찰</h4><span class="ren">Observe</span></div>
+      <div class="rstep"><div class="rnum">04</div><h4>가족의 적절한 지원</h4><span class="ren">Connect</span></div>
     </div>
   </div>
 </section>
@@ -1542,6 +1822,7 @@
     <div class="sec-head center reveal">
       <p class="eyebrow" style="display:inline-block">우리가 풀려는 문제</p>
       <h2>'예방적 건강 안심망'의 공백</h2>
+      <p class="lead" style="margin-top:18px">부모도, 자녀도, 의료기관도 — 변화가 시작되는 그 시점을 아무도 보지 못합니다.</p>
     </div>
     
     <div class="problem-visual-wrap reveal">
@@ -1578,6 +1859,170 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- 기록되지 않는 공백 -->
+    <div class="gap-timeline reveal">
+      <div class="gt-head">
+        <h3>큰 건강 사건 이전부터 변화는 시작됩니다</h3>
+        <p>그러나 그 흐름을 지속적으로 보고, 필요한 행동으로 연결하는 구조는 없습니다.</p>
+      </div>
+      <div class="gt-rail">
+        <div class="gt-col early">
+          <span class="gt-label">작은 변화 · 초기 신호</span>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-9 9 9 9 0 0 1-9-9Z"/><path d="M12 3v4M8 5v2M16 5v2"/></svg>식사량 감소</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>체중 감소</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="m10 21 3-6 3 6M9 10l4-2 4 3M13 8v6"/></svg>활동량 감소</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>수면질 저하</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 12h2"/></svg>피로감 증가</div>
+        </div>
+
+        <div class="gt-void">
+          <span class="gv-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+          <b>기록되지 않는 공백</b>
+          <span>작은 변화가 지속적으로 기록되지 않아<br>언제, 어떻게 변화가 시작되었는지<br>알 수 없습니다</span>
+          <span class="gv-dur">수개월 ~ 수년</span>
+        </div>
+
+        <div class="gt-col late">
+          <span class="gt-label">큰 건강 사건 · 뒤늦은 발견</span>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>낙상</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20M4 19v-7a2 2 0 0 1 2-2h5v9M11 12h7a2 2 0 0 1 2 2v5"/><circle cx="7.5" cy="7" r="2"/></svg>입원</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>질환 악화</div>
+          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6v4l-2 4h16l-2-4V8a6 6 0 0 0-6-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>응급 상황</div>
+        </div>
+      </div>
+      <div class="gt-foot">
+        라이프메디가 풀려는 핵심 문제 — 건강 사건 이전에 나타나는 <b>일상의 작은 변화</b>를 개인의 시간 흐름으로 축적하고,<br>이를 본인과 가족의 <b>지원 행동</b>으로 연결하는 구조를 만드는 것입니다.
+      </div>
+    </div>
+
+    <!-- 전노쇠: 되돌릴 수 있는 구간 -->
+    <div class="frailty">
+      <div class="fr-card reveal">
+        <h3>전노쇠(Pre-frail)는 건강과 노쇠 사이의 큰 중간 영역입니다</h3>
+        <p class="fr-sub">병원에 입원한 노인이 아니라, 지역사회의 평범한 시니어 <b>절반 이상이 이미 노쇠 위험 구간</b>에 들어와 있습니다.</p>
+        <div class="fr-stages">
+          <div class="fr-stage robust"><span class="fs-en">ROBUST</span><span class="fs-kr">건강</span><span class="fs-pct">45.2%</span></div>
+          <div class="fr-stage pre"><span class="fs-en">PRE-FRAIL</span><span class="fs-kr">전노쇠</span><span class="fs-pct">47.0%</span></div>
+          <div class="fr-stage frail"><span class="fs-en">FRAIL</span><span class="fs-kr">노쇠</span><span class="fs-pct">7.8%</span></div>
+          <div class="fr-stage dep"><span class="fs-en">DEPENDENCY</span><span class="fs-kr">장애·돌봄 의존</span><span class="fs-pct" style="font-size:15px">위험 ↑</span></div>
+        </div>
+        <div class="fr-window">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><b>전노쇠는 되돌릴 수 있는 구간입니다.</b> 작은 변화가 시작된 시점부터 일상의 제약이 커지기 전까지 — 이 회복 가능 구간을 최대한 길게 지키는 것이 라이프메디의 목표입니다.</p>
+        </div>
+        <p class="fr-note">* 출처: Korean Frailty and Aging Cohort Study(지역사회 거주 70~84세 2,907명). Fried 신체적 노쇠 기준 — 의도하지 않은 체중 감소, 피로, 악력 저하, 보행 속도 저하, 신체 활동 감소 중 1~2개는 전노쇠, 3개 이상은 노쇠로 구분.</p>
+      </div>
+
+      <div class="fr-card reveal">
+        <h3>그리고 전노쇠는 실제로 개선됩니다</h3>
+        <p class="fr-sub">3.9년간 추적한 결과, 전노쇠 상태에서 <b>건강한 상태로 되돌아간 비율</b>입니다.</p>
+        <div class="fr-flow">
+          <div class="fr-row good"><span class="frl">건강 회복</span><span class="frbar"><i style="width:23.1%"></i></span><span class="frv">23.1%</span></div>
+          <div class="fr-row keep"><span class="frl">전노쇠 유지</span><span class="frbar"><i style="width:58.2%"></i></span><span class="frv">58.2%</span></div>
+          <div class="fr-row bad"><span class="frl">노쇠 악화</span><span class="frbar"><i style="width:18.2%"></i></span><span class="frv">18.2%</span></div>
+        </div>
+        <div class="fr-window" style="background:#f0f9ff;border-color:rgba(22,119,255,.25)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--sage-deep)"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <p style="color:#0c4a6e">개선과 악화가 <b>모두 가능한 동적인 구간</b>이기 때문에, 지속적인 관찰과 적절한 지원이 결정적인 시기입니다.</p>
+        </div>
+        <p class="fr-note">* 출처: Transitions between frailty states among community-dwelling older people(16개 연구, 고령자 42,775명 대상 3.9년 메타 분석).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT ===== -->
+<section class="product" id="product">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow" style="display:inline-block">우리가 만드는 것</p>
+      <h2>매일의 영양에서 시작해,<br>가족의 안심으로 이어집니다</h2>
+      <p class="lead" style="margin-top:18px">영양 · 데이터 · 케어를 연결해 시니어의 건강한 일상을 지킵니다.</p>
+    </div>
+
+    <div class="pr-grid">
+      <!-- 리메디센 -->
+      <div class="pr-card lead-product reveal">
+        <span class="pr-step">STEP 01 · 영양</span>
+        <div class="pr-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l-1.4 18.2A2 2 0 0 1 14.6 22H9.4a2 2 0 0 1-2-1.8L6 2Z"/><path d="M6.6 9h10.8"/></svg>
+        </div>
+        <div class="pr-name"><h3>리메디센</h3><span class="pr-en">RemediSen</span></div>
+        <p class="pr-tag">시니어 단백질 · 영양 보충 음료</p>
+        <p class="pr-desc">물을 넣어 흔들어 마시는 1회분 파우치입니다. 식사를 대체하는 제품이 아니라 <b>식사를 보완하는 제품</b>으로, 매일 맛있게 부담 없이 반복할 수 있는 영양 습관을 만듭니다.</p>
+        <ul class="pr-specs">
+          <li>단백질 10g 이상 + 필수 영양소</li>
+          <li>낮은 당도, 편안한 곡물 풍미</li>
+          <li>물만 넣고 흔들면 완성되는 간편함</li>
+          <li>아침 · 식후 · 활동 전 언제나</li>
+          <li>파우치 잡기·개봉까지 시니어 편의성 설계</li>
+        </ul>
+        <span class="pr-status soon"><span class="pr-dot"></span>2026년 10월 출시 예정</span>
+      </div>
+
+      <!-- 스마트링 -->
+      <div class="pr-card reveal">
+        <span class="pr-step">STEP 02 · 생활 데이터</span>
+        <div class="pr-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6.6"/><path d="M8.8 6.2 9.3 2.4h5.4l.5 3.8"/></svg>
+        </div>
+        <div class="pr-name"><h3>스마트링</h3><span class="pr-en">Smart Ring</span></div>
+        <p class="pr-tag">생활 흐름을 기록하는 웨어러블</p>
+        <p class="pr-desc">시계보다 간편해 시니어가 부담 없이 24시간 착용할 수 있습니다. 수면과 활동, 생활 리듬의 변화를 끊김 없이 기록합니다.</p>
+        <ul class="pr-specs">
+          <li>가볍고 편안한 착용감</li>
+          <li>최대 7일 배터리 · 생활 방수</li>
+          <li>수면 · 활동량 · 심박 · 생활 리듬</li>
+          <li>착용 수용성과 데이터 품질을 함께 연구</li>
+        </ul>
+        <span class="pr-status dev"><span class="pr-dot"></span>연구·개발 준비 중</span>
+      </div>
+
+      <!-- AI 플랫폼 -->
+      <div class="pr-card reveal">
+        <span class="pr-step">STEP 03 · 가족 연결</span>
+        <div class="pr-visual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5.5" r="2"/><circle cx="19" cy="5.5" r="2"/><circle cx="5" cy="18.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="m6.6 7 3 3M17.4 7l-3 3M6.6 17l3-3M17.4 17l-3-3"/></svg>
+        </div>
+        <div class="pr-name"><h3>AI 라이프케어</h3><span class="pr-en">Platform</span></div>
+        <p class="pr-tag">가족을 연결하는 안심 서비스</p>
+        <p class="pr-desc">영양과 생활 데이터를 연결해 변화의 흐름을 읽고, 가족이 모든 순간을 확인하지 않아도 필요한 때 적절하게 참여할 수 있게 돕습니다.</p>
+        <ul class="pr-specs">
+          <li>가족 공유 대시보드</li>
+          <li>확인이 필요한 순간의 알림</li>
+          <li>AI 기반 개인 맞춤 건강 인사이트</li>
+          <li>케어 서비스 및 전문 상담 연계</li>
+        </ul>
+        <span class="pr-status dev"><span class="pr-dot"></span>플랫폼 설계 중</span>
+      </div>
+    </div>
+
+    <!-- 제품에서 데이터로 -->
+    <div class="pr-flow reveal">
+      <div class="pf-step">
+        <span class="pf-n">NUTRITION DATA</span>
+        <h4>영양 데이터</h4>
+        <p>섭취와 재구매 기록으로 고객과의 첫 번째 관계를 시작합니다.</p>
+      </div>
+      <div class="pf-step">
+        <span class="pf-n">LIFE DATA</span>
+        <h4>생활 데이터</h4>
+        <p>수면·활동·심박 등 일상 데이터를 시간의 흐름으로 축적합니다.</p>
+      </div>
+      <div class="pf-step">
+        <span class="pf-n">AI LIFECARE</span>
+        <h4>맞춤 라이프케어</h4>
+        <p>두 데이터를 연결해 개인과 가족에게 필요한 케어로 이어줍니다.</p>
+      </div>
+    </div>
+
+    <div class="pr-band reveal">
+      <span class="pb-ico">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </span>
+      <p>기존 식사를 <span class="pb-em">대체</span>하는 것이 아닌,<br>식사를 <span class="pb-em">보완</span>하는 영양 습관 솔루션입니다</p>
     </div>
   </div>
 </section>
@@ -1641,12 +2086,12 @@
         <div class="sci-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h3>18년 임상의의<br>경험을 담은 레시피</h3>
-        <p>요양병원 현장에서 노인성 질환자들을 직접 치료한 김우성 대표와 전문 의료진이 부모님의 생리적 변화를 관찰하며 시니어 맞춤형 영양 배합을 직접 감수하고 설계합니다.</p>
+        <h3>예방의학 전문의가<br>설계한 영양 기준</h3>
+        <p>요양병원 병원장이자 예방의학 전문의인 김우성 대표가 노쇠가 시작되는 지점을 현장에서 관찰하고, 시니어의 생리적 변화에 맞춘 영양 배합을 직접 감수합니다.</p>
         <div class="sci-divider"></div>
         <div class="sci-metrics">
-          <div class="sci-metric-item"><span class="sci-metric-label">임상 경력</span><span class="sci-metric-value">18 Years</span></div>
-          <div class="sci-metric-item"><span class="sci-metric-label">식단 검증</span><span class="sci-metric-value">Doctor Supervised</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">배합 감수</span><span class="sci-metric-value">Preventive Medicine</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">관찰 현장</span><span class="sci-metric-value">Care Hospital</span></div>
         </div>
       </div>
       
@@ -1656,12 +2101,12 @@
         <div class="sci-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M22 7l-10-3L2 7M22 7l-2 10H4L2 7M12 11h8M12 11H4"/></svg>
         </div>
-        <h3>시니어 맞춤형<br>3대 뉴트리션 과학</h3>
-        <p>근육 감소를 억제하는 고품질 단백질 흡수율 설계, 혈압과 혈당에 부담 없는 저염·저당 관리, 삼킴 장애(연하 곤란)를 돕는 섬세한 연도 조절 기술을 제공합니다.</p>
+        <h3>노쇠의 시작을 늦추는<br>3가지 영양 설계</h3>
+        <p>65세 이상은 WHO 권장 단백질 섭취량에 못 미치기 쉽습니다. 근감소증을 막는 단백질 10g 이상 보충, 부담을 낮춘 저당 설계, 물의 양으로 농도를 맞추는 유연함을 담았습니다.</p>
         <div class="sci-divider"></div>
         <div class="sci-metrics">
-          <div class="sci-metric-item"><span class="sci-metric-label">단백질 함량</span><span class="sci-metric-value">High Protein</span></div>
-          <div class="sci-metric-item"><span class="sci-metric-label">당/나트륨 기준</span><span class="sci-metric-value">Low Sodium/Sugar</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">1회분 단백질</span><span class="sci-metric-value">10g +</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">당 설계</span><span class="sci-metric-value">Low Sugar</span></div>
         </div>
       </div>
       
@@ -1675,10 +2120,76 @@
         <p>숙제처럼 억지로 풀어야 하는 인지 검사나 두뇌 훈련 게임은 부모님께 큰 심리적 부담을 줍니다. 라이프메디는 매일 먹는 식사 루틴과 안심 헬스 데이터를 통해 따뜻한 연결을 제공합니다.</p>
         <div class="sci-divider"></div>
         <div class="sci-metrics">
-          <div class="sci-metric-item"><span class="sci-metric-label">심리적 장벽</span><span class="sci-metric-value">Zero Resistance</span></div>
-          <div class="sci-metric-item"><span class="sci-metric-label">가족 안심도</span><span class="sci-metric-value">100% Connected</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">추가 부담</span><span class="sci-metric-value">No Extra Task</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">연결 방식</span><span class="sci-metric-value">Daily Routine</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY NOW ===== -->
+<section class="whynow" id="whynow">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow" style="display:inline-block">왜 지금인가</p>
+      <h2>초고령화 시대,<br>사회 구조가 먼저 바뀌고 있습니다</h2>
+      <p class="lead" style="margin-top:18px">건강수명 격차, 데이터 공백, 핵가족화 — 지금 시작해야 하는 이유입니다.</p>
+    </div>
+
+    <div class="wn-grid">
+      <div class="wn-card reveal">
+        <div class="wn-fig">
+          <span class="wn-num">20.3%</span>
+          <span class="wn-unit">2025년 65세 이상 인구 비중</span>
+        </div>
+        <div class="wn-body">
+          <h3>시니어 인구가 빠르게 늘며<br>초고령사회에 진입했습니다</h3>
+          <p>2030년 25%, 2050년 40%로 가속화됩니다. 시니어 헬스케어 시장과 예방 중심 관리 수요가 함께 커집니다.</p>
+          <span class="wn-src">출처: 국가데이터처 「2025 고령자 통계」</span>
+        </div>
+      </div>
+
+      <div class="wn-card reveal">
+        <div class="wn-fig">
+          <span class="wn-num">520<small style="font-size:20px">만원</small></span>
+          <span class="wn-unit">노인 1인당 연간 진료비</span>
+        </div>
+        <div class="wn-body">
+          <h3>유병기간이 늘면서<br>건강수명의 격차가 벌어집니다</h3>
+          <p>근감소증과 낙상이 늘고 만성질환이 장기화되며, 치료 이전 단계의 예방형 관리 필요성이 커지고 있습니다.</p>
+          <span class="wn-src">출처: 국민건강보험공단 2023</span>
+        </div>
+      </div>
+
+      <div class="wn-card reveal">
+        <div class="wn-fig">
+          <span class="wn-num">24<small style="font-size:20px">개월</small></span>
+          <span class="wn-unit">건강검진 사이의 공백</span>
+        </div>
+        <div class="wn-body">
+          <h3>2년 주기 검진 사이에<br>생활의 공백이 생깁니다</h3>
+          <p>그 사이의 식단·수면·운동량·복약 여부는 기록되지 않아, 조기 개입의 기회를 놓치게 됩니다.</p>
+          <span class="wn-src">출처: 국민건강보험공단</span>
+        </div>
+      </div>
+
+      <div class="wn-card reveal">
+        <div class="wn-fig">
+          <span class="wn-num">83%</span>
+          <span class="wn-unit">노인 독거 + 부부 가구 비중</span>
+        </div>
+        <div class="wn-body">
+          <h3>핵가족 시대, 가족도 부모의<br>건강을 지속해서 살피기 어렵습니다</h3>
+          <p>자녀 동거 가구는 10.3%에 불과합니다. 가족을 중요한 참여자로 설계하되, 서비스의 중심에는 시니어 본인이 있어야 합니다.</p>
+          <span class="wn-src">출처: 보건복지부 「2023 노인실태조사」</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wn-market reveal">
+      <p>국내 시니어 케어푸드 시장은 <b>2030년 4.5조원</b> 규모로 성장할 전망입니다<br>연평균 성장률 <b>8.4%</b> — 지금이 진입의 시점입니다</p>
+      <span>출처: 한국농수산식품유통공사, 2020~2025년 CAGR 8.4% 적용한 추정치</span>
     </div>
   </div>
 </section>
@@ -1701,54 +2212,116 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <p class="eyebrow" style="display:inline-block">함께하는 사람들</p>
-      <h2>한 가지 마음으로 모인<br>각 분야의 전문가들</h2>
-      <p class="lead" style="margin-top:18px">의료 현장·브랜드·기술, 서로 다른 자리에서 일하던 전문가들이 부모님의 건강을 위해 모였습니다.</p>
+      <h2>요양병원 현장의 전문성과<br>제품을 만들어 온 경험</h2>
+      <p class="lead" style="margin-top:18px">의료 현장에서 노쇠가 시작되는 지점을 본 사람과, 그것을 실제 제품으로 만들어 온 사람이 함께합니다.</p>
     </div>
-    <div class="team-grid">
-      <div class="member reveal">
-        <div class="avatar photo">
-          <img src="assets/team/ceo-sketch.png" alt="대표이사 김우성" loading="lazy"
-               onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CE'))">
+    <div class="lead-grid">
+      <!-- CEO -->
+      <div class="leader reveal">
+        <div class="ld-top">
+          <div class="ld-photo">
+            <img src="assets/team/ceo.jpg" alt="라이프메디 대표이사 김우성" loading="lazy"
+                 onerror="this.closest('.ld-photo').style.display='none'">
+          </div>
+          <div>
+            <div class="ld-role">FOUNDER &amp; CEO</div>
+            <div class="ld-name">김우성<small>대표이사</small></div>
+            <p class="ld-line">요양병원 현장에서 노쇠가 시작되는 지점을 관찰하고, 예방의학의 관점으로 제품을 설계합니다.</p>
+          </div>
         </div>
-        <div class="role">CEO</div>
-        <h4>김우성</h4>
-        <p>요양병원 원장. 현장에서 쌓은 임상 경험으로 노인성 질환을 살피고, 부모님께 맞는 영양식 레시피를 직접 감수합니다.</p>
-      </div>
-      <div class="member reveal">
-        <div class="avatar photo">
-          <img src="assets/team/cso-sketch.png" alt="이사 김지우" loading="lazy"
-               onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CS'))">
+        <div class="ld-block">
+          <h5>강점</h5>
+          <ul>
+            <li>사업 총괄, 리메디센 제품 개발, 시니어 고객 검증</li>
+            <li>요양병원 운영을 통한 시니어 의료 현장 이해</li>
+            <li>예방의학 기반의 초기 변화와 예방적 개입 관점</li>
+            <li>의료 AI와 데이터 윤리에 대한 전문성</li>
+          </ul>
         </div>
-        <div class="role">이사</div>
-        <h4>김지우</h4>
-        <p>13년 차 마케터. 라이프메디의 브랜드와 고객 경험을 설계하고, 자녀 세대에게 따뜻하게 다가갑니다.</p>
-      </div>
-      <div class="member reveal">
-        <div class="avatar photo">
-          <img src="assets/team/cpo-sketch.png" alt="PM 신양기" loading="lazy"
-               onerror="this.parentElement.classList.remove('photo');this.replaceWith(document.createTextNode('CP'))">
+        <div class="ld-block">
+          <h5>경력</h5>
+          <ul>
+            <li>현 북서울요양병원 병원장</li>
+            <li>대한요양병원협회 상임이사</li>
+            <li>대한중앙의료봉사회 고문</li>
+            <li>국제인공지능윤리협회 의료인공지능위원장</li>
+            <li>서울대학교 예방의학교실 예방의학 전문의</li>
+            <li>아주대학교 의과대학 학사 · 인턴 수료</li>
+          </ul>
         </div>
-        <div class="role">PM</div>
-        <h4>신양기</h4>
-        <p>13년 차 프로덕트 전문가. 부모님의 건강과 가족을 잇는 보호자 앱과 서비스 경험을 만듭니다.</p>
       </div>
-      <div class="member reveal">
-        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
-        <div class="role">CTO</div>
-        <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
-        <p>부모님의 건강 데이터를 안전하게 잇는 기술 인프라와 보안을 함께 만들어갈 분을 찾고 있습니다.</p>
+
+      <!-- CPO -->
+      <div class="leader reveal">
+        <div class="ld-top">
+          <div class="ld-photo">
+            <img src="assets/team/cpo.jpg" alt="라이프메디 CPO 신양기" loading="lazy"
+                 onerror="this.closest('.ld-photo').style.display='none'">
+          </div>
+          <div>
+            <div class="ld-role">CPO</div>
+            <div class="ld-name">신양기<small>이사</small></div>
+            <p class="ld-line">13년간 제품을 만들어 온 프로덕트 리더. 사업의 방향을 실제 디지털 제품으로 구체화합니다.</p>
+          </div>
+        </div>
+        <div class="ld-block">
+          <h5>강점</h5>
+          <ul>
+            <li>기획, CRM, 플랫폼, 스마트링, 데이터 구조 설계</li>
+            <li>헬스케어 사업기획 및 MVP 기획 · 개발 경험</li>
+            <li>13년간 축적한 PM · PO · 제품 운영 경험</li>
+            <li>팀과 프로젝트를 이끌어 온 제품 리딩 경험</li>
+          </ul>
+        </div>
+        <div class="ld-block">
+          <h5>경력</h5>
+          <ul>
+            <li>전 에누마코리아 PM</li>
+            <li>전 금방 PM</li>
+            <li>전 핏펫 PO</li>
+            <li>전 아이클 PL</li>
+            <li>전 에스티유니타스 팀장</li>
+            <li>중앙대학교 경영학과 학사</li>
+          </ul>
+        </div>
       </div>
-      <div class="member reveal">
-        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
-        <div class="role">BM</div>
-        <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
-        <p>메디컬 레시피를 실제 제품으로 완성하고, 좋은 품질을 합리적인 가격에 담아낼 분을 찾고 있습니다.</p>
+    </div>
+
+    <!-- 채용 -->
+    <div class="hiring-head reveal">
+      <h3>함께할 분을 찾고 있습니다</h3>
+      <p>제품이 시장에 나가는 2026년, 두 자리에서 함께 만들어갈 분을 기다립니다.</p>
+    </div>
+    <div class="hiring-grid">
+      <div class="hire reveal">
+        <span class="hr-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="13" y="8" width="3" height="10"/></svg>
+        </span>
+        <div>
+          <h4>데이터 사이언티스트<span class="tbd">채용 중</span></h4>
+          <p>스마트링 데이터를 연구하고, 데이터 품질 관리와 개인별 생활 기준선을 설계할 분을 찾습니다.</p>
+        </div>
       </div>
-      <div class="member reveal">
-        <div class="avatar sketch-ph"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="17" r="8.5"/><path d="M9 41c0-8 6.7-13.5 15-13.5S39 33 39 41"/></svg></div>
-        <div class="role">BD</div>
-        <h4>함께할 분 <span class="tbd">(채용 중)</span></h4>
-        <p>보험·헬스케어 파트너와 손잡고, 가족의 부담을 더는 연결을 넓혀갈 분을 찾고 있습니다.</p>
+      <div class="hire reveal">
+        <span class="hr-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1Z"/><path d="M16.5 8.5a4 4 0 0 1 0 7"/><path d="M19.5 5.5a8 8 0 0 1 0 13"/></svg>
+        </span>
+        <div>
+          <h4>마케팅 PM<span class="tbd">채용 중</span></h4>
+          <p>리메디센의 고객 획득과 재구매, 자사몰·채널 운영과 CRM을 이끌어갈 분을 찾습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 파트너 -->
+    <div class="partners reveal">
+      <h3>함께하는 파트너</h3>
+      <div class="pt-grid">
+        <div class="pt-item"><b>퓨어 FURE</b><span>리메디센 ODM<br>시제품 생산</span></div>
+        <div class="pt-item"><b>익선다다</b><span>브랜드 · 패키지<br>고객경험 설계</span></div>
+        <div class="pt-item"><b>엑스플랫</b><span>초기 마케팅<br>실행 지원</span></div>
+        <div class="pt-item"><b>스마트링 파트너</b><span>연구기기 및<br>데이터 연동 지원</span></div>
+        <div class="pt-item"><b>개발 파트너</b><span>플랫폼<br>백엔드 구현</span></div>
       </div>
     </div>
   </div>
@@ -1776,19 +2349,26 @@
           <img src="assets/LogoLifemedi_Symbol.svg" alt="라이프메디 심볼" style="width:34px;height:34px;display:block" />
           <span class="name"><b style="color:#fff;font-size:18px">라이프메디</b><small style="color:var(--sage)">LIFEMEDI</small></span>
         </div>
-        <p>건강 수명을 늘리는 것이 진짜 헬스케어다 — 자녀 세대의 마음에서 시작된 시니어 헬스케어 전문 기업.</p>
+        <p>영양 · 데이터 · AI로 연결되는 시니어 디지털 헬스케어 기업 — 건강 수명을 늘리는 것이 진짜 헬스케어입니다.</p>
       </div>
       <div>
         <h5>회사</h5>
-        <ul><li><a href="#story">시작한 이유</a></li><li><a href="#problem">문제 정의</a></li><li><a href="#vision">비전</a></li></ul>
+        <ul>
+          <li><a href="#story">시작한 이유</a></li>
+          <li><a href="#problem">문제 정의</a></li>
+          <li><a href="#whynow">왜 지금인가</a></li>
+          <li><a href="#vision">비전</a></li>
+          <li><a href="#team">팀</a></li>
+        </ul>
       </div>
       <div>
-        <h5>라이프메디</h5>
+        <h5>제품 · 서비스</h5>
         <ul>
+          <li><a href="#product">리메디센 RemediSen</a></li>
+          <li><a href="#product">스마트링</a></li>
+          <li><a href="#product">AI 라이프케어</a></li>
           <li><a href="#belief">건강수명 신념</a></li>
-          <li><a href="#science">의학적 영양 과학</a></li>
-          <li><a href="#team">팀</a></li>
-          <li><a href="#contact">제휴·문의</a></li>
+          <li><a href="#science">의학적 영양 근거</a></li>
         </ul>
       </div>
       <div>
