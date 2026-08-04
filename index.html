@@ -1230,98 +1230,57 @@
     .sci-card { padding: 36px 28px; }
   }
 
-  /* ---------- Problem: 기록되지 않는 공백 타임라인 ---------- */
+  /* ---------- Problem: 변화의 3단계 (개념) ---------- */
   .gap-timeline {
     margin-top: 32px; background: var(--white); border: 1px solid rgba(11, 25, 44, .06);
     border-radius: 28px; padding: 44px 40px; box-shadow: var(--shadow-soft);
   }
-  .gt-head { text-align: center; margin-bottom: 34px; }
+  .gt-head { text-align: center; margin-bottom: 38px; }
   .gt-head h3 { font-size: clamp(21px, 2.4vw, 27px); font-weight: 800; margin-bottom: 10px; }
   .gt-head p { color: var(--muted); font-size: 16px; }
-  .gt-rail { display: grid; grid-template-columns: 1fr auto 1fr; gap: 26px; align-items: stretch; }
-  .gt-col { display: flex; flex-direction: column; gap: 10px; }
-  .gt-label {
-    font-size: 12.5px; font-weight: 800; letter-spacing: .1em; margin-bottom: 6px;
-    display: inline-flex; align-items: center; gap: 7px;
+  .gt-rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .gt-phase {
+    background: var(--ivory); border: 1px solid rgba(11, 25, 44, .06); border-radius: 20px;
+    padding: 30px 28px; position: relative;
   }
-  .gt-col.early .gt-label { color: var(--sage-deep); }
-  .gt-col.late .gt-label { color: #c2410c; }
-  .gt-chip {
-    display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: var(--ink);
-    background: var(--ivory); border: 1px solid rgba(11, 25, 44, .06); border-radius: 12px; padding: 11px 15px;
+  .gt-phase .gp-n {
+    font-family: "Montserrat", sans-serif; font-size: 12.5px; font-weight: 800; letter-spacing: .12em;
+    color: var(--blue); display: block; margin-bottom: 12px;
   }
-  .gt-chip svg { width: 17px; height: 17px; flex: none; color: var(--sage-deep); }
-  .gt-col.late .gt-chip { background: #fff5f2; border-color: rgba(194, 65, 12, .14); }
-  .gt-col.late .gt-chip svg { color: #c2410c; }
-  .gt-void {
-    width: 210px; border-radius: 18px; border: 2px dashed rgba(194, 65, 12, .3);
-    background: linear-gradient(180deg, #fff8f5, #fff);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 26px 18px; gap: 10px;
+  .gt-phase h4 { font-size: 18.5px; font-weight: 800; margin-bottom: 9px; line-height: 1.45; }
+  .gt-phase p { font-size: 15.5px; color: var(--muted); line-height: 1.7; }
+  .gt-phase.void {
+    background: linear-gradient(180deg, #fff8f5, #fff); border-color: rgba(194, 65, 12, .22);
+    border-style: dashed;
   }
-  .gt-void .gv-mark {
-    width: 46px; height: 46px; border-radius: 50%; background: #fee2e2; color: #c2410c;
-    display: grid; place-items: center;
-  }
-  .gt-void .gv-mark svg { width: 22px; height: 22px; }
-  .gt-void b { font-size: 17px; color: var(--navy); font-weight: 800; }
-  .gt-void span { font-size: 14px; color: var(--muted); line-height: 1.6; }
-  .gt-void .gv-dur {
-    font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .06em;
-    color: #c2410c; background: #fee2e2; border-radius: 99px; padding: 4px 12px;
+  .gt-phase.void .gp-n { color: #c2410c; }
+  .gt-phase:not(:last-child)::after {
+    content: "→"; position: absolute; right: -15px; top: 50%; transform: translateY(-50%);
+    color: var(--blue); font-size: 19px; font-weight: 700; z-index: 1;
   }
   .gt-foot {
     margin-top: 30px; background: var(--navy); color: #dbe6f5; border-radius: 18px;
-    padding: 24px 30px; font-size: 16.5px; line-height: 1.7; text-align: center;
+    padding: 26px 30px; font-size: 16.5px; line-height: 1.75; text-align: center;
   }
   .gt-foot b { color: var(--sage); font-weight: 800; }
 
-  /* ---------- Problem: 전노쇠 회복 구간 ---------- */
-  .frailty { margin-top: 32px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; }
-  .fr-card {
-    background: var(--white); border: 1px solid rgba(11, 25, 44, .06);
-    border-radius: 28px; padding: 40px 36px; box-shadow: var(--shadow-soft);
-    display: flex; flex-direction: column;
+  /* ---------- Problem: 되돌릴 수 있는 구간 ---------- */
+  .recover {
+    margin-top: 26px; background: var(--white); border: 1px solid rgba(22, 119, 255, .22);
+    border-radius: 28px; padding: 42px 44px; box-shadow: var(--shadow-soft);
+    display: flex; gap: 30px; align-items: flex-start;
   }
-  .fr-card .fr-note { margin-top: auto; padding-top: 20px; }
-  .fr-card > h3 { font-size: 21px; font-weight: 800; margin-bottom: 6px; }
-  .fr-card > .fr-sub { color: var(--muted); font-size: 15.5px; margin-bottom: 28px; }
-  .fr-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .fr-stage {
-    border-radius: 16px; padding: 20px 12px; text-align: center; border: 1.5px solid transparent;
-    background: #f1f5f9;
+  .recover .rc-ic {
+    flex: none; width: 62px; height: 62px; border-radius: 18px; display: grid; place-items: center;
+    background: linear-gradient(140deg, rgba(22,119,255,.1), rgba(140,203,255,.16));
+    border: 1px solid rgba(22, 119, 255, .2); color: var(--sage-deep);
   }
-  .fr-stage .fs-en {
-    font-family: "Montserrat", sans-serif; font-size: 12.5px; font-weight: 800;
-    letter-spacing: .05em; color: var(--muted); display: block;
-  }
-  .fr-stage .fs-kr { font-size: 15px; font-weight: 700; color: var(--navy); margin-top: 5px; display: block; }
-  .fr-stage .fs-pct {
-    font-family: "Montserrat", sans-serif; font-size: 23px; font-weight: 800; color: var(--navy);
-    margin-top: 10px; display: block; letter-spacing: -.02em;
-  }
-  .fr-stage.robust { background: #ecfdf5; } .fr-stage.robust .fs-en, .fr-stage.robust .fs-pct { color: #047857; }
-  .fr-stage.pre { background: #fff7ed; border-color: #f59e0b; box-shadow: 0 8px 22px rgba(245, 158, 11, .18); }
-  .fr-stage.pre .fs-en, .fr-stage.pre .fs-pct { color: #b45309; }
-  .fr-stage.frail { background: #fef2f2; } .fr-stage.frail .fs-en, .fr-stage.frail .fs-pct { color: #b91c1c; }
-  .fr-stage.dep { background: #f1f5f9; }
-  .fr-window {
-    margin-top: 18px; display: flex; align-items: center; gap: 12px;
-    background: #fffbeb; border: 1px solid rgba(245, 158, 11, .3); border-radius: 14px; padding: 15px 20px;
-  }
-  .fr-window svg { width: 22px; height: 22px; color: #b45309; flex: none; }
-  .fr-window p { font-size: 15.5px; color: #78350f; line-height: 1.6; }
-  .fr-window b { font-weight: 800; }
-  .fr-flow { display: grid; gap: 12px; margin-top: 4px; }
-  .fr-row { display: grid; grid-template-columns: 74px 1fr auto; align-items: center; gap: 14px; }
-  .fr-row .frl { font-size: 15px; font-weight: 700; }
-  .fr-row .frbar { height: 10px; border-radius: 99px; background: #eef2f6; overflow: hidden; }
-  .fr-row .frbar i { display: block; height: 100%; border-radius: 99px; }
-  .fr-row .frv { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 16px; }
-  .fr-row.good .frl, .fr-row.good .frv { color: #047857; } .fr-row.good .frbar i { background: #10b981; }
-  .fr-row.keep .frl, .fr-row.keep .frv { color: #b45309; } .fr-row.keep .frbar i { background: #f59e0b; }
-  .fr-row.bad  .frl, .fr-row.bad  .frv { color: #b91c1c; } .fr-row.bad  .frbar i { background: #ef4444; }
-  .fr-note { font-size: 13px; color: #94a3b8; line-height: 1.65; margin-top: 20px; }
+  .recover .rc-ic svg { width: 28px; height: 28px; }
+  .recover .rc-body { flex: 1; min-width: 0; }
+  .recover h3 { font-size: clamp(20px, 2.3vw, 26px); font-weight: 800; margin-bottom: 14px; line-height: 1.45; }
+  .recover p { font-size: 16.5px; color: var(--muted); line-height: 1.8; }
+  .recover p b { color: var(--sage-deep); font-weight: 800; }
+
 
   /* ---------- Product ---------- */
   .product { background: var(--ivory); }
@@ -1373,22 +1332,6 @@
   .pr-band .pb-ico svg { width: 25px; height: 25px; color: var(--sage); }
   .pr-band p { font-size: clamp(17px, 2vw, 21px); font-weight: 700; line-height: 1.6; }
   .pr-band p .pb-em { color: var(--sage); }
-
-  .pr-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-  .pf-step {
-    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 18px;
-    padding: 24px 26px; position: relative;
-  }
-  .pf-step .pf-n {
-    font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .1em;
-    color: var(--blue); display: block; margin-bottom: 8px;
-  }
-  .pf-step h4 { font-size: 17.5px; font-weight: 800; margin-bottom: 6px; }
-  .pf-step p { font-size: 15px; color: var(--muted); line-height: 1.6; }
-  .pf-step:not(:last-child)::after {
-    content: "→"; position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
-    color: var(--blue); font-size: 19px; font-weight: 700; z-index: 1;
-  }
 
   /* ---------- Why Now ---------- */
   .whynow { background: var(--ivory); }
@@ -1451,57 +1394,22 @@
   .hiring-head { margin-top: 60px; text-align: center; }
   .hiring-head h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
   .hiring-head p { color: var(--muted); font-size: 16px; }
-  .hiring-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
-  .hire {
-    background: var(--white); border: 1.5px dashed rgba(22, 119, 255, .3); border-radius: 22px;
-    padding: 30px 32px; display: flex; gap: 20px; align-items: flex-start; transition: border-color .3s, background .3s;
-  }
-  .hire:hover { border-color: var(--blue); background: #f8fbff; }
-  .hire .hr-ic {
-    width: 50px; height: 50px; border-radius: 15px; flex: none; display: grid; place-items: center;
-    background: rgba(22, 119, 255, .08); color: var(--sage-deep); border: 1px solid rgba(22, 119, 255, .18);
-  }
-  .hire .hr-ic svg { width: 23px; height: 23px; }
-  .hire h4 { font-size: 18.5px; font-weight: 800; margin-bottom: 7px; }
-  .hire h4 .tbd { font-size: 13.5px; color: var(--blue); font-weight: 700; margin-left: 7px; }
-  .hire p { font-size: 15.5px; color: var(--muted); line-height: 1.65; }
-  .partners { margin-top: 60px; border-top: 1px solid rgba(11, 25, 44, .08); padding-top: 44px; }
-  .partners > h3 { text-align: center; font-size: 15px; font-weight: 800; letter-spacing: .1em; color: var(--muted); margin-bottom: 28px; }
-  .pt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-  .pt-item {
-    background: var(--white); border: 1px solid rgba(11, 25, 44, .06); border-radius: 16px;
-    padding: 22px 18px; text-align: center; transition: transform .3s, box-shadow .3s;
-  }
-  .pt-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
-  .pt-item b { display: block; font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
-  .pt-item span { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
-
   /* ---------- Responsive: new sections ---------- */
   @media(max-width:980px) {
-    .frailty { grid-template-columns: 1fr; }
-    .pr-grid, .pr-flow { grid-template-columns: 1fr; }
-    .pf-step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
-    .pr-flow { gap: 32px; }
+    .pr-grid { grid-template-columns: 1fr; }
     .wn-grid { grid-template-columns: 1fr; }
     .lead-grid { grid-template-columns: 1fr; }
-    .pt-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media(max-width:900px) {
-    .gt-rail { grid-template-columns: 1fr; }
-    .gt-void { width: 100%; padding: 22px; }
+    .gt-rail { grid-template-columns: 1fr; gap: 32px; }
+    .gt-phase:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -25px; transform: translateX(50%); }
     .gap-timeline { padding: 34px 24px; }
-    .fr-card { padding: 32px 24px; }
-    .fr-stages { grid-template-columns: repeat(2, 1fr); }
-    .hiring-grid { grid-template-columns: 1fr; }
+    .recover { flex-direction: column; gap: 20px; padding: 32px 26px; }
     .pr-band { padding: 28px 24px; }
     .leader { padding: 30px 24px; }
     .ld-top { flex-direction: column; align-items: flex-start; gap: 18px; }
     .wn-card { flex-direction: column; gap: 16px; padding: 30px 26px; }
     .wn-fig { text-align: left; }
-  }
-  @media(max-width:560px) {
-    .pt-grid { grid-template-columns: 1fr; }
-    .fr-stages { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1868,66 +1776,35 @@
         <p>그러나 그 흐름을 지속적으로 보고, 필요한 행동으로 연결하는 구조는 없습니다.</p>
       </div>
       <div class="gt-rail">
-        <div class="gt-col early">
-          <span class="gt-label">작은 변화 · 초기 신호</span>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-9 9 9 9 0 0 1-9-9Z"/><path d="M12 3v4M8 5v2M16 5v2"/></svg>식사량 감소</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>체중 감소</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="m10 21 3-6 3 6M9 10l4-2 4 3M13 8v6"/></svg>활동량 감소</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>수면질 저하</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M6 12h2"/></svg>피로감 증가</div>
+        <div class="gt-phase">
+          <span class="gp-n">01</span>
+          <h4>작은 변화가 시작됩니다</h4>
+          <p>식사량과 활동이 조금씩 줄어들지만, 자연스러운 노화로 여기며 지나갑니다.</p>
         </div>
-
-        <div class="gt-void">
-          <span class="gv-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
-          <b>기록되지 않는 공백</b>
-          <span>작은 변화가 지속적으로 기록되지 않아<br>언제, 어떻게 변화가 시작되었는지<br>알 수 없습니다</span>
-          <span class="gv-dur">수개월 ~ 수년</span>
+        <div class="gt-phase void">
+          <span class="gp-n">02</span>
+          <h4>아무도 보지 못하는 시간</h4>
+          <p>그 변화가 기록되지 않아, 언제 어떻게 시작되었는지 알 수 없습니다.</p>
         </div>
-
-        <div class="gt-col late">
-          <span class="gt-label">큰 건강 사건 · 뒤늦은 발견</span>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>낙상</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20M4 19v-7a2 2 0 0 1 2-2h5v9M11 12h7a2 2 0 0 1 2 2v5"/><circle cx="7.5" cy="7" r="2"/></svg>입원</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>질환 악화</div>
-          <div class="gt-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a6 6 0 0 0-6 6v4l-2 4h16l-2-4V8a6 6 0 0 0-6-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>응급 상황</div>
+        <div class="gt-phase">
+          <span class="gp-n">03</span>
+          <h4>큰 건강 사건으로 드러납니다</h4>
+          <p>이미 이전의 일상으로 돌아가기 어려워진 뒤에야 발견됩니다.</p>
         </div>
       </div>
       <div class="gt-foot">
-        라이프메디가 풀려는 핵심 문제 — 건강 사건 이전에 나타나는 <b>일상의 작은 변화</b>를 개인의 시간 흐름으로 축적하고,<br>이를 본인과 가족의 <b>지원 행동</b>으로 연결하는 구조를 만드는 것입니다.
+        라이프메디는 이 <b>보이지 않는 시간</b>을 일상의 흐름으로 이어,<br>본인과 가족이 필요한 때 <b>움직일 수 있게</b> 합니다.
       </div>
     </div>
 
-    <!-- 전노쇠: 되돌릴 수 있는 구간 -->
-    <div class="frailty">
-      <div class="fr-card reveal">
-        <h3>전노쇠(Pre-frail)는 건강과 노쇠 사이의 큰 중간 영역입니다</h3>
-        <p class="fr-sub">병원에 입원한 노인이 아니라, 지역사회의 평범한 시니어 <b>절반 이상이 이미 노쇠 위험 구간</b>에 들어와 있습니다.</p>
-        <div class="fr-stages">
-          <div class="fr-stage robust"><span class="fs-en">ROBUST</span><span class="fs-kr">건강</span><span class="fs-pct">45.2%</span></div>
-          <div class="fr-stage pre"><span class="fs-en">PRE-FRAIL</span><span class="fs-kr">전노쇠</span><span class="fs-pct">47.0%</span></div>
-          <div class="fr-stage frail"><span class="fs-en">FRAIL</span><span class="fs-kr">노쇠</span><span class="fs-pct">7.8%</span></div>
-          <div class="fr-stage dep"><span class="fs-en">DEPENDENCY</span><span class="fs-kr">장애·돌봄 의존</span><span class="fs-pct" style="font-size:15px">위험 ↑</span></div>
-        </div>
-        <div class="fr-window">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <p><b>전노쇠는 되돌릴 수 있는 구간입니다.</b> 작은 변화가 시작된 시점부터 일상의 제약이 커지기 전까지 — 이 회복 가능 구간을 최대한 길게 지키는 것이 라이프메디의 목표입니다.</p>
-        </div>
-        <p class="fr-note">* 출처: Korean Frailty and Aging Cohort Study(지역사회 거주 70~84세 2,907명). Fried 신체적 노쇠 기준 — 의도하지 않은 체중 감소, 피로, 악력 저하, 보행 속도 저하, 신체 활동 감소 중 1~2개는 전노쇠, 3개 이상은 노쇠로 구분.</p>
-      </div>
-
-      <div class="fr-card reveal">
-        <h3>그리고 전노쇠는 실제로 개선됩니다</h3>
-        <p class="fr-sub">3.9년간 추적한 결과, 전노쇠 상태에서 <b>건강한 상태로 되돌아간 비율</b>입니다.</p>
-        <div class="fr-flow">
-          <div class="fr-row good"><span class="frl">건강 회복</span><span class="frbar"><i style="width:23.1%"></i></span><span class="frv">23.1%</span></div>
-          <div class="fr-row keep"><span class="frl">전노쇠 유지</span><span class="frbar"><i style="width:58.2%"></i></span><span class="frv">58.2%</span></div>
-          <div class="fr-row bad"><span class="frl">노쇠 악화</span><span class="frbar"><i style="width:18.2%"></i></span><span class="frv">18.2%</span></div>
-        </div>
-        <div class="fr-window" style="background:#f0f9ff;border-color:rgba(22,119,255,.25)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--sage-deep)"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-          <p style="color:#0c4a6e">개선과 악화가 <b>모두 가능한 동적인 구간</b>이기 때문에, 지속적인 관찰과 적절한 지원이 결정적인 시기입니다.</p>
-        </div>
-        <p class="fr-note">* 출처: Transitions between frailty states among community-dwelling older people(16개 연구, 고령자 42,775명 대상 3.9년 메타 분석).</p>
+    <!-- 되돌릴 수 있는 구간 -->
+    <div class="recover reveal">
+      <span class="rc-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <div class="rc-body">
+        <h3>건강과 노쇠 사이에는,<br>되돌릴 수 있는 구간이 있습니다</h3>
+        <p>노화는 한 방향으로만 흐르지 않습니다. 기력이 조금 떨어진 시기를 어떻게 먹고 움직이며 살피느냐에 따라, 다시 건강한 일상으로 돌아가는 경우가 적지 않습니다. 라이프메디는 이 구간을 <b>최대한 길게 지키는 일</b>에 집중합니다.</p>
       </div>
     </div>
   </div>
@@ -1945,76 +1822,51 @@
     <div class="pr-grid">
       <!-- 리메디센 -->
       <div class="pr-card lead-product reveal">
-        <span class="pr-step">STEP 01 · 영양</span>
+        <span class="pr-step">영양</span>
         <div class="pr-visual">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l-1.4 18.2A2 2 0 0 1 14.6 22H9.4a2 2 0 0 1-2-1.8L6 2Z"/><path d="M6.6 9h10.8"/></svg>
         </div>
         <div class="pr-name"><h3>리메디센</h3><span class="pr-en">RemediSen</span></div>
         <p class="pr-tag">시니어 단백질 · 영양 보충 음료</p>
-        <p class="pr-desc">물을 넣어 흔들어 마시는 1회분 파우치입니다. 식사를 대체하는 제품이 아니라 <b>식사를 보완하는 제품</b>으로, 매일 맛있게 부담 없이 반복할 수 있는 영양 습관을 만듭니다.</p>
+        <p class="pr-desc">물을 넣어 흔들어 마시는 1회분 파우치입니다. 식사를 대체하는 제품이 아니라 <b>식사를 보완하는 제품</b>으로, 매일 부담 없이 이어갈 수 있는 영양 습관을 만듭니다.</p>
         <ul class="pr-specs">
-          <li>단백질 10g 이상 + 필수 영양소</li>
+          <li>단백질 중심의 균형 잡힌 영양</li>
           <li>낮은 당도, 편안한 곡물 풍미</li>
-          <li>물만 넣고 흔들면 완성되는 간편함</li>
           <li>아침 · 식후 · 활동 전 언제나</li>
-          <li>파우치 잡기·개봉까지 시니어 편의성 설계</li>
         </ul>
-        <span class="pr-status soon"><span class="pr-dot"></span>2026년 10월 출시 예정</span>
+        <span class="pr-status soon"><span class="pr-dot"></span>출시 준비 중</span>
       </div>
 
       <!-- 스마트링 -->
       <div class="pr-card reveal">
-        <span class="pr-step">STEP 02 · 생활 데이터</span>
+        <span class="pr-step">생활 데이터</span>
         <div class="pr-visual">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6.6"/><path d="M8.8 6.2 9.3 2.4h5.4l.5 3.8"/></svg>
         </div>
         <div class="pr-name"><h3>스마트링</h3><span class="pr-en">Smart Ring</span></div>
         <p class="pr-tag">생활 흐름을 기록하는 웨어러블</p>
-        <p class="pr-desc">시계보다 간편해 시니어가 부담 없이 24시간 착용할 수 있습니다. 수면과 활동, 생활 리듬의 변화를 끊김 없이 기록합니다.</p>
+        <p class="pr-desc">시계보다 간편해 부담 없이 오래 착용할 수 있습니다. 수면과 활동, 생활 리듬의 변화를 끊김 없이 기록합니다.</p>
         <ul class="pr-specs">
           <li>가볍고 편안한 착용감</li>
-          <li>최대 7일 배터리 · 생활 방수</li>
-          <li>수면 · 활동량 · 심박 · 생활 리듬</li>
-          <li>착용 수용성과 데이터 품질을 함께 연구</li>
+          <li>수면 · 활동 · 생활 리듬</li>
         </ul>
-        <span class="pr-status dev"><span class="pr-dot"></span>연구·개발 준비 중</span>
+        <span class="pr-status dev"><span class="pr-dot"></span>준비 중</span>
       </div>
 
       <!-- AI 플랫폼 -->
       <div class="pr-card reveal">
-        <span class="pr-step">STEP 03 · 가족 연결</span>
+        <span class="pr-step">가족 연결</span>
         <div class="pr-visual">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5.5" r="2"/><circle cx="19" cy="5.5" r="2"/><circle cx="5" cy="18.5" r="2"/><circle cx="19" cy="18.5" r="2"/><path d="m6.6 7 3 3M17.4 7l-3 3M6.6 17l3-3M17.4 17l-3-3"/></svg>
         </div>
         <div class="pr-name"><h3>AI 라이프케어</h3><span class="pr-en">Platform</span></div>
         <p class="pr-tag">가족을 연결하는 안심 서비스</p>
-        <p class="pr-desc">영양과 생활 데이터를 연결해 변화의 흐름을 읽고, 가족이 모든 순간을 확인하지 않아도 필요한 때 적절하게 참여할 수 있게 돕습니다.</p>
+        <p class="pr-desc">영양과 생활의 흐름을 읽어, 가족이 모든 순간을 확인하지 않아도 필요한 때 적절하게 참여할 수 있게 돕습니다.</p>
         <ul class="pr-specs">
-          <li>가족 공유 대시보드</li>
+          <li>가족이 함께 보는 건강 흐름</li>
           <li>확인이 필요한 순간의 알림</li>
-          <li>AI 기반 개인 맞춤 건강 인사이트</li>
-          <li>케어 서비스 및 전문 상담 연계</li>
         </ul>
-        <span class="pr-status dev"><span class="pr-dot"></span>플랫폼 설계 중</span>
-      </div>
-    </div>
-
-    <!-- 제품에서 데이터로 -->
-    <div class="pr-flow reveal">
-      <div class="pf-step">
-        <span class="pf-n">NUTRITION DATA</span>
-        <h4>영양 데이터</h4>
-        <p>섭취와 재구매 기록으로 고객과의 첫 번째 관계를 시작합니다.</p>
-      </div>
-      <div class="pf-step">
-        <span class="pf-n">LIFE DATA</span>
-        <h4>생활 데이터</h4>
-        <p>수면·활동·심박 등 일상 데이터를 시간의 흐름으로 축적합니다.</p>
-      </div>
-      <div class="pf-step">
-        <span class="pf-n">AI LIFECARE</span>
-        <h4>맞춤 라이프케어</h4>
-        <p>두 데이터를 연결해 개인과 가족에게 필요한 케어로 이어줍니다.</p>
+        <span class="pr-status dev"><span class="pr-dot"></span>준비 중</span>
       </div>
     </div>
 
@@ -2102,10 +1954,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M22 7l-10-3L2 7M22 7l-2 10H4L2 7M12 11h8M12 11H4"/></svg>
         </div>
         <h3>노쇠의 시작을 늦추는<br>3가지 영양 설계</h3>
-        <p>65세 이상은 WHO 권장 단백질 섭취량에 못 미치기 쉽습니다. 근감소증을 막는 단백질 10g 이상 보충, 부담을 낮춘 저당 설계, 물의 양으로 농도를 맞추는 유연함을 담았습니다.</p>
+        <p>65세 이상은 WHO 권장 단백질 섭취량에 못 미치기 쉽습니다. 근감소증을 막는 단백질 보충, 부담을 낮춘 저당 설계, 물의 양으로 농도를 맞추는 유연함을 담았습니다.</p>
         <div class="sci-divider"></div>
         <div class="sci-metrics">
-          <div class="sci-metric-item"><span class="sci-metric-label">1회분 단백질</span><span class="sci-metric-value">10g +</span></div>
+          <div class="sci-metric-item"><span class="sci-metric-label">영양 초점</span><span class="sci-metric-value">Protein Focused</span></div>
           <div class="sci-metric-item"><span class="sci-metric-label">당 설계</span><span class="sci-metric-value">Low Sugar</span></div>
         </div>
       </div>
@@ -2290,39 +2142,8 @@
     <!-- 채용 -->
     <div class="hiring-head reveal">
       <h3>함께할 분을 찾고 있습니다</h3>
-      <p>제품이 시장에 나가는 2026년, 두 자리에서 함께 만들어갈 분을 기다립니다.</p>
-    </div>
-    <div class="hiring-grid">
-      <div class="hire reveal">
-        <span class="hr-ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="13" y="8" width="3" height="10"/></svg>
-        </span>
-        <div>
-          <h4>데이터 사이언티스트<span class="tbd">채용 중</span></h4>
-          <p>스마트링 데이터를 연구하고, 데이터 품질 관리와 개인별 생활 기준선을 설계할 분을 찾습니다.</p>
-        </div>
-      </div>
-      <div class="hire reveal">
-        <span class="hr-ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1Z"/><path d="M16.5 8.5a4 4 0 0 1 0 7"/><path d="M19.5 5.5a8 8 0 0 1 0 13"/></svg>
-        </span>
-        <div>
-          <h4>마케팅 PM<span class="tbd">채용 중</span></h4>
-          <p>리메디센의 고객 획득과 재구매, 자사몰·채널 운영과 CRM을 이끌어갈 분을 찾습니다.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 파트너 -->
-    <div class="partners reveal">
-      <h3>함께하는 파트너</h3>
-      <div class="pt-grid">
-        <div class="pt-item"><b>퓨어 FURE</b><span>리메디센 ODM<br>시제품 생산</span></div>
-        <div class="pt-item"><b>익선다다</b><span>브랜드 · 패키지<br>고객경험 설계</span></div>
-        <div class="pt-item"><b>엑스플랫</b><span>초기 마케팅<br>실행 지원</span></div>
-        <div class="pt-item"><b>스마트링 파트너</b><span>연구기기 및<br>데이터 연동 지원</span></div>
-        <div class="pt-item"><b>개발 파트너</b><span>플랫폼<br>백엔드 구현</span></div>
-      </div>
+      <p>부모의 일상을 지키는 일에 마음이 움직이는 분이라면, 편하게 연락 주세요.</p>
+      <a class="btn" href="mailto:recruit@lifemedi.kr" style="margin-top:22px">채용 문의하기</a>
     </div>
   </div>
 </section>
