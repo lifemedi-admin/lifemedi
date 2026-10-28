@@ -7,3 +7,6 @@
 
 # 이미지 원본 백업 (웹에 불필요)
 assets/photos/_original/
+
+# 1차 수정에서 지운 문구 보관용 — 공개 저장소·사이트에 올리지 않음
+docs/removed-content-2026-10.md
